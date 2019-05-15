@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Deb Thornton - Front End Web Developer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+        <link rel="manifest" href="favicons/site.webmanifest">
+        <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#885a5a">
+        <meta name="msapplication-TileColor" content="#916ea4">
+        <meta name="theme-color" content="#916ea4">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+        <link rel="stylesheet" href="styles/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- <div class="logo-button nav-item">
+            <button onclick='changeContent(0)' class='logo-icon icon inactive-nav'></button>
+        </div> -->
+        <div id="landing-page">
+            <div class='box-1 phoney-placeholder'>I'm Deb Thornton, a <span>front end web developer</span> out of Philadelphia.</div>
+            <div id="landing-headline">
+                <span>D</span>
+                <span>E</span>
+                <span>B</span>
+                <span class='x'>X</span>
+                <span>D</span>
+                <span>E</span>
+                <span>V</span>
+            </div>
+            <div class="box-2 phoney-placeholder">
+                    <p>
+                        I develop websites, web apps, & fun distractions with:
+                    </p>
+                    <div class="button-container">
+                        <button alt="HTML5" class="tool-img icon html-min-icon"></button>
+                        <button alt="CSS3" class="tool-img icon css-min-icon"></button>
+                        <button alt="JavaScript" class="tool-img icon js-512-min-icon"></button>
+                        <button alt="jQuery" class="tool-img icon jQuery-min-icon"></button>
+                        <button alt="Sass" class="tool-img icon Sass-min-icon"></button>
+                        <button alt="Bootstrap" class="tool-img icon bootstrap-min-icon"></button>
+                    </div>                       
+            </div>
+        </div>
+        <div id="background"></div>
+        <div id="background-2"></div>
+        <nav>
+            <ul>
+                <li class="nav-item"><button onclick='changeContent(0)' class='inactive-nav'>Main</button></li>
+                <li class="nav-item"><button onclick='changeContent(1)' class='inactive-nav'>Works</button></li>
+                <li class="nav-item"><button onclick='changeContent(8)' class='inactive-nav'>Bio</button></li>
+            </ul>
+        </nav>    
+        <main>
+            <header class='z-index'>
+                <div class="content z-index front">
+                    <input type="checkbox" id="toggle" class="offscreen" /> <label for="toggle" class="switch"></label>
+                    <h1>I'm Deb Thornton, a <span>front end web developer</span> out of Philadelphia.</h1>
+                    <div id="headline">
+                            <span>D</span>
+                            <span>E</span>
+                            <span>B</span>
+                            <span class='x'>X</span>
+                            <span>D</span>
+                            <span>E</span>
+                            <span>V</span>
+                    </div>
+                    <div class="toolset">
+                        <p>
+                            I develop websites, web apps, & fun distractions with:
+                        </p>
+                        <div class="button-container">
+                            <button alt="HTML5" class="tool-img icon html-min-icon"></button>
+                            <button alt="CSS3" class="tool-img icon css-min-icon"></button>
+                            <button alt="JavaScript" class="tool-img icon js-512-min-icon"></button>
+                            <button alt="jQuery" class="tool-img icon jQuery-min-icon"></button>
+                            <button alt="Sass" class="tool-img icon Sass-min-icon"></button>
+                            <button alt="Bootstrap" class="tool-img icon bootstrap-min-icon"></button>
+                        </div>                       
+                    </div>
+                </div>
+            </header>
+            <section id="works-section">
+                <div class="content back" id='works-buttons-container'>
+                    <button onclick='changeContent(2)' class="works-button" id='fansi-button'>
+                        <div class="works-logo">Fansí<br>Schmansí</div>
+                        <p class="works-title">Fansí Schmansí</p>
+                    </button>
+                    <button onclick='changeContent(3)' class="works-button" id='syzygy-button'>
+                        <div class="works-logo">Syzygy</div>
+                        <p class="works-title">Syzygy</p>
+                    </button>
+                    <button onclick='changeContent(4)' class="works-button" id='film-button'>
+                        <div class="works-logo">Filmscope</div>
+                        <p class="works-title">Filmscope</p>
+                    </button>
+                    <button onclick='changeContent(5)' class="works-button" id='roman-button'>
+                        <div class="works-logo">IV</div>
+                        <p class="works-title">Roman Numeral Convertor</p>
+                    </button>
+                    <button onclick='changeContent(6)' class="works-button" id='drum-button'>
+                        <div class="works-logo">DumDrum</div>
+                        <p class="works-title">DumDrum</p>
+                    </button>
+                    <button onclick='changeContent(7)' class="works-button" id='portfolio-button'>
+                        <div class="works-logo Logo-icon icon">
+                        </div>
+                    </button>
+                </div>
+                <div id="works-display-container">
+                    <button onclick='changeContent(1)' id='back-button' class='play3-icon icon arrow back'></button>
+                    <div class="content work-display back" id='fansi-display'>
+                        
+                        <h3 class="display-title">Fansí Schmansí</h3>
+                        <video loop muted playsinline id='fansi-schmansi-video'>
+                            <source src="https://res.cloudinary.com/debdev/video/upload/v1556227096/DebDevelops/fsivid_1.mp4" type="video/mp4">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637579/DebDevelops/fsividwebm.webm' type="video/webm">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637625/DebDevelops/fsividogv.ogv' type="video/ogv">     
+                            Sadly, your browser doesn't support the video tag. This is a smooth MP4 video preview of the
+                            website. <a href="https://debxdev.github.io/Fansi-Schmansi/" title='Go to Fansí Schmansí'>Click here</a> to see the site in full.
+                        </video>
+                        <div class="display-text" >
+                            <div class='text-div'>
+                                <p>
+                                    <a id='fansi-schmansi-link' href='https://debxdev.github.io/Fansi-Schmansi/'
+                                        target="_blank" class='link'>Fansí Schmansí</a>
+                                    is a demonstration of CSS, SASS, Object Oriented and Functional JS Programming on a
+                                    fictional restaurant website.
+                                </p>
+                            </div>
+                            <div class='text-div'>
+                                <p>
+                                    This was an exercise in responsive font-end web development, UI design, and Google
+                                    Maps API integration. Vanilla JS
+                                    was used in order to prevent the reliance of libraries and frameworks.
+                                </p>
+                            </div>                           
+                            <p class='stack'>
+                                HTML5 / CSS3 / SASS / JS 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content work-display back" id='syzygy-display' >
+                        
+                        <h3 class="display-title">Syzygy</h3>
+                        <video loop muted playsinline id='syzygy-video'>
+                            <source src="https://res.cloudinary.com/debdev/video/upload/v1556227096/DebDevelops/svid_1.mp4">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637579/DebDevelops/svidwebm.webm' type="video/webm">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637638/DebDevelops/svidogv.ogv' type="video/ogv">
+                            Sadly, your browser doesn't support the video tag. This is a smooth MP4 video preview of the
+                            website. <a href="https://debxdev.github.io/Syzygy/" title='Go to Syzygy App'>Click here</a> to see the site in full.
+                        </video>
+                        <div class="display-text" >
+                            <div class='text-div'>
+                                <p>
+                                    <a id='syzygy-link' href='https://debxdev.github.io/Syzygy/' target="_blank"
+                                        class='link'>Syzygy</a>
+                                    is a web app that joins productivity and relaxation into one simple UI.
+                                    The app displays a 12-hour clock on non-mobile displays, an editable todo-list, and
+                                    an
+                                    audio control
+                                    interface that interacts with the Soundcloud API.
+                                </p>
+                            </div>
+                            <div class='text-div'>
+                                <p>
+                                    Background photos change according to the currently selected sound.
+                                    Creating this app required extensive functional programming. I built the
+                                    functionality
+                                    of Syzygy using Vanilla JS in order to better acquaint myself with the ins-and-outs
+                                    of the
+                                    language in its purest form.
+                                </p>
+                            </div>
+                            <div class='text-div'>
+                                <p>
+                                    I use Syzygy everyday, and it has become my favorite project as a result.
+                                </p>
+                            </div>
+                            <p class='stack'>
+                                HTML5 / CSS3 / JS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content work-display back" id='film-display' >
+                        
+                        <h3 class="display-title">Film Scope</h3>
+                        <video loop muted playsinline id='film-scope-video'>
+                            <source src="https://res.cloudinary.com/debdev/video/upload/v1556227095/DebDevelops/fsvid_1.mp4">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637576/DebDevelops/fsvidwebm.webm' type="video/webm">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637611/DebDevelops/fsvidogv.ogv' type="video/ogv">
+                            Sadly, your browser doesn't support the video tag. This is a smooth MP4 video preview of the
+                            website. <a href="https://debxdev.github.io/Film-Scope/" title='Go to Film Scope App'>Click here</a> to see the site in
+                            full.
+                        </video>
+                        <div class="display-text" >
+                            <div class='text-div'>
+                                <p>
+                                    <a id='film-scope-link' href='https://debxdev.github.io/Film-Scope/' target="_blank"
+                                        class='link'>Film Scope</a>
+                                    is a web app where users can search for film details by title. The app accesses the
+                                    OMDB
+                                    API and returns
+                                    matching responses as an array of movie objects. Details such as the plot,
+                                    writer/director, and cast are
+                                    returned as well in an easy to read UI.
+                                </p>
+                            </div>
+                            <div class='text-div'>
+                                <p>
+                                    Creating Film Scope was an exercise in API
+                                    accessibility.
+                                </p>
+                            </div>
+                            <p class='stack'>
+                                HTML5 / CSS3 / BOOTSTRAP / JS / JQUERY
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content work-display back" id='roman-display' >
+                        
+                        <h3 class="display-title">Roman Numeral Convertor</h3>
+                        <video loop muted playsinline id='roman-numeral-convertor-video'>
+                            <source src="https://res.cloudinary.com/debdev/video/upload/v1556227095/DebDevelops/rnvid_1.mp4">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637578/DebDevelops/rnvidwebm.webm' type="video/webm">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637610/DebDevelops/rnvidogv.ogv' type="video/ogv">
+                            Sadly, your browser doesn't support the video tag. This is a smooth MP4 video preview of the
+                            website. <a href="https://debxdev.github.io/roman-numeral-convertor/" title='Go to Roman Numeral Convertor App'>Click here</a> to see
+                            the site in full.
+                        </video>
+                        <div class="display-text" >
+                            <div class='text-div'>
+                                <p>
+                                    <a id='roman-numeral-convertor-link'
+                                        href='https://debxdev.github.io/roman-numeral-convertor/' target="_blank"
+                                        class='link'>Roman Numeral Convertor</a>
+                                    is a simple web app that does what the name says. It was developed using Vanilla
+                                    JavaScript, CSS, and SASS.
+                                </p>
+                            </div>                          
+                            <p class='stack'>
+                                HTML5 / CSS3 / SASS / JS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content work-display back" id='drum-display' >             
+                        <h3 class="display-title">DumDrum</h3>
+                        <video loop muted playsinline id='dum-drum-video'>
+                            <source src="https://res.cloudinary.com/debdev/video/upload/v1556227095/DebDevelops/ddvid_1.mp4">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637577/DebDevelops/ddvidwebm.webm' type="video/webm">
+                            <source src='https://res.cloudinary.com/debdev/video/upload/v1557637616/DebDevelops/ddvidogv.ogv' type="video/ogv">
+                            Sadly, your browser doesn't support the video tag. This is a smooth MP4 video preview of the
+                            website. <a href="https://debxdev.github.io/DumDrum/" title='Go to DumDrum App'>Click here</a> to see the site in
+                            full.
+                        </video>
+                        <div class="display-text" >
+                            <div class='text-div'>
+                                <p>
+                                    <a id='dum-drum-link' href='https://debxdev.github.io/DumDrum/' target="_blank"
+                                        class='link'>Dum Drum</a>
+                                    is a simple JavaScript Drum Kit developed using Vanilla JavaScript and simple DOM
+                                    manipulation.
+                                </p>
+                            </div>                          
+                            <p class='stack'>
+                                HTML5 / CSS3 / JS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content work-display back" id='portfolio-display'>
+                        <div class="logo icon Logo-icon">
+                        </div>
+                        <div class="display-text">
+                            <div class='text-div'>
+                                <p>
+                                    Creating this portfolio was an exercise in both web design and
+                                    responsive web development. A simple, minimal UI with pops of colorful
+                                    gradients in which I will continue to post projects. If you'd like to reach
+                                    me for more info, <a href='mailto:debxthornton@icloud.com' title='Shoot me an email'>contact</a> me. I respond quickly.
+                                </p>
+                            </div>                         
+                            <p class='stack'>
+                                HTML5 / CSS3 / SASS / JS
+                            </p>
+                        </div>
+                    </div>
+                </div>               
+            </section>
+            <section id="bio-section">
+                <div id="bio-container">
+                    <div class="content back bio-content" >
+                            <h3 class="display-title">About Me</h3>
+                        <div class="bio-text">
+                            <div class='text-div'>
+                                <p>
+                                    Code has always been something that I've dabbled in since childhood, whether it was
+                                    <span>creating small webpages</span>
+                                    for class or <span>cooking up mods</span> for the Sims! In <span>2017</span>, during my junior year
+                                    of college, I decided to delve
+                                    into coding more deeply. I haven't been able to separate myself since. 
+                                </p>
+                            </div>
+                            <div class='text-div'>
+                                <p>
+                                    That same year, I began creating webpages for
+                                    classmates, friends, and family both recreationally and professionally. Seeing the
+                                    result of a program, snippet, app,
+                                    or even a small piece of code in action is <span>one of the most rewarding
+                                    experiences</span> I've had.
+                                </p>
+                            </div>
+                            <div class='text-div'>
+                                <p>
+                                    After college I continued to study code independently, focusing on <span>front end web
+                                    development</span>.
+                                    Each project hosted on this website was completed as a challenge to myself and in order
+                                    to further develop either a
+                                    programming concept, a framework, or my <span>ability to create</span> with the tools at
+                                    hand.
+                                </p>
+                            </div>
+                            <div class='text-div'> 
+                                <p>
+                                    It's been a blast so far. My time at my desk with an editor open is genuinely my
+                                    favorite part of the day, <span>challenges and all</span>.
+                                    I also enjoy <span>mixed martial arts</span>, <span>playing my guitar</span>, and
+                                    <span>singing</span> to my dog, <span>Cammy</span>.
+                                </p>
+                            </div>
+                        </div>                     
+                    </div>
+                </div>             
+            </section>
+        </main>
+
+        <footer>
+            <div id="social-buttons">
+                <a href="https://github.com/debxdev" target="_blank">
+                    <button class="btn btn-link">
+                        <i class="fa fa-github"></i>
+                    </button>
+                </a>
+                <a href="https://github.com/debxdev" target="_blank">
+                    <button class="btn btn-link">
+                        <i class="fa fa-linkedin"></i>
+                    </button>
+                </a>
+                <a href="https://codepen.io/debthornton/" target="_blank">
+                    <button class="btn btn-link">
+                        <i class="fa fa-codepen"></i>
+                    </button>
+                </a>
+                <a href="mailto:debxthornton@icloud.com">
+                    <button class="btn btn-link">
+                        <i class="fa fa-envelope-o"></i>
+                    </button>
+                </a>
+            </div>
+        </footer>
+        <script src="app/main.min.js" async defer></script>
+        <script src="app/background.min.js"></script>
+        <script src="app/nav.min.js"></script>
+        <script src="app/content.min.js"></script>
+        <script src="app/landingPage.min.js"></script>
+    </body>
+</html>
