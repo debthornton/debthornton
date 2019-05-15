@@ -1,0 +1,1300 @@
+@import 'reset';
+@import 'variables';
+@import 'animations';
+@import 'icons';
+@import 'mixins';
+@import 'switch';
+
+html {
+    background: $background-color;
+}
+
+body {
+    @include flex-center($j-content: space-between);
+    color: $main-text-color;
+    height: 100vh;
+    width: 100%;
+    min-width: 360px;
+    min-height: 360px;
+    position: relative;
+    -webkit-perspective: 150vw;
+            perspective: 150vw;
+
+    @media screen and (max-width: 600px) and (min-height: 800px) {
+        min-width: 430px;
+    }
+
+    #landing-page {
+        @include fullscreen-flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 40px;
+        z-index: 99;
+        -webkit-animation: fade-out 3s forwards ease 3s;
+                animation: fade-out 3s forwards ease 3s;
+        background: $landing-gradient-color;
+        line-height: 25px;
+        font-weight: 100;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: center;
+        @include flex-center(space-evenly, column);
+
+        @include MQ(L) {
+            @include flex-center(center, row);
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            
+        }
+
+        .box-1 {
+            font-size: 11px;
+            font-weight: 300;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 640px;
+            -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+            pointer-events: none;
+
+            @include MQ(S) {
+                -webkit-transition: font-size 1s ease, margin 0.8s ease;
+                transition: font-size 1s ease, margin 0.8s ease;
+            }
+
+            @include MQ(M) {
+                max-width: none;
+                width: 100%;
+            }
+
+            @include MQ(L) {
+                font-size: 14px;
+            }
+
+            span {
+                color: $accent-color;
+            }
+        }
+
+        #landing-headline {
+            font-size: 30px;
+            letter-spacing: 12px;
+            color: $main-text-color;
+            @include flex-center(center, column);
+            will-change: transform;
+
+            @include MQ(S) {
+                -webkit-transition: letter-spacing 0.5s ease-out, -webkit-transform 1.2s ease-out;
+                transition: transform 1.2s ease-out, letter-spacing 0.5s ease-out, -webkit-transform 1.2s ease-out;
+                -webkit-transform: translateX(0);;
+                        transform: translateX(0);
+            }
+
+            @include MQ(L) {
+                font-size: 50px;
+                letter-spacing: 18px;
+                -webkit-transform: translateX(200px);
+                        transform: translateX(200px);
+            }
+
+            @include MQ(XL) {
+                font-size: 60px;
+                letter-spacing: 22px;
+                -webkit-transform: translateX(380px);
+                        transform: translateX(380px);
+            }
+
+            @include MQH(SMH) {
+                font-size: 20px;
+                letter-spacing: 16px;
+                @include flex-center(center, row);
+            }
+
+            @media screen and (min-width: $M) and (max-height: 615px) {
+                font-size: 30px;
+                letter-spacing: 18px;
+            }
+
+            @include MQH(LH) {
+                font-size: 55px;
+                letter-spacing: 25px;
+                -webkit-transform: all 0.5s ease;
+                        transform: all 0.5s ease;
+            }
+
+            @media screen and (min-width: $XL) and (max-height: 723px) {
+                -webkit-transform: translateX(340px);
+                        transform: translateX(340px);
+            }
+
+            span {
+                opacity: 0;
+                margin: 20px 0;
+
+                @include MQH(MH) {
+                    -webkit-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+                }
+
+                @include MQH(LH) {
+                    margin: 40px 0;
+                    -webkit-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+                }
+            }
+
+            .x {
+                color: $headline-color;
+                font-size: 25px;
+                font-weight: 300;
+
+                @include MQ(L) {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .box-2 {
+            @include flex-center($direction: column);
+            margin-bottom: 10px;
+            pointer-events: none;
+            width: 100%;
+            max-width: 640px;
+
+            @include MQ(M) {
+                max-width: none;
+                width: 100%;
+            }
+
+            p {
+                max-width: 440px;
+                -webkit-backdrop-filter: blur(10px);
+                        backdrop-filter: blur(10px);
+
+                @include MQ(M) {
+                    max-width: none;
+                }
+            }
+
+            .button-container {
+                @include flex-center;
+                margin-top: 20px;
+
+                .tool-img {
+                    width: 35px;
+                    font-size: 20px;
+                    margin: 0 8px;
+                    color: $accent-color;
+                    opacity: 0.8;
+
+                    &:hover {
+                        cursor: auto;
+                    }
+
+                    @include MQ(S) {
+                        -webkit-transition: font-size 1s ease, margin 0.8s ease;
+                        transition: font-size 1s ease, margin 0.8s ease;
+                    }
+
+                    @include MQ(L) {
+                        font-size: 22px;
+                        margin: 0 10px;
+                        -webkit-transition: font-size 1s ease, margin 0.8s ease;
+                        transition: font-size 1s ease, margin 0.8s ease;
+                    }
+                }
+            }
+        }
+
+        .box-1,
+        .box-2 {
+            opacity: 0;
+        }
+    }
+
+    #background,
+    #background-2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 102vw;
+        height: 102vh;
+        -webkit-filter: contrast(105%) grayscale(100%);
+                filter: contrast(105%) grayscale(100%);
+        background-color: darken(#1C0D11, 5%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: var(--percentX);
+        background-position-y: var(--percentY);
+        will-change: background-position, opacity;
+        --x: 0px;
+        --y: 0px;
+        --percentX: 45%;
+        --percentY: 50%;
+        -webkit-transition: -webkit-filter 1.4s ease;
+        transition: filter 1.4s ease, -webkit-filter 1.4s ease;
+    
+        &:before {
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: $line-gradient-color;
+            position: absolute;
+            opacity: 0.15;
+        }
+    
+        @include MQ(L) {
+            --percentX: 45%;
+            --percentY: 20%;
+            background-position-x: calc(var(--percentX) + var(--x));
+            background-position-y: calc(var(--percentY) + var(--y));
+        }
+    
+        @include MQH(SH) {
+            --percentX: 45%;
+            --percentY: 20%;
+        }
+    }
+    
+    #background {
+        z-index: -10;
+        background-image: url('https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/unblur.jpg');
+        will-change: opacity;
+    }
+    
+    #background-2 {
+        z-index: -11;
+        background-image: url('https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/blur.png');
+        opacity: 0.5;
+    
+        &:before {
+            opacity: 0.4;
+        }
+    }
+
+    button {
+        background: transparent;
+        border: none;
+    
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+nav {
+    @include flex-center(center);
+    @include header-footer;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    will-change: transform, margin-right;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+
+    @include MQ(S) {
+        -webkit-transition: margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
+        transition: transform 0.4s ease-out, margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+        margin-right: 0;
+    }
+
+    @include MQ(L) {
+        margin-right: 5vw;
+        padding-bottom: 50px;
+        border-bottom: 1px solid $main-text-color;
+        @include rotate;
+        -webkit-transition: margin-right 0.3s ease, -webkit-transform 0.6s ease;
+        transition: transform 0.6s ease, margin-right 0.3s ease, -webkit-transform 0.6s ease;
+    }
+
+    ul {
+        @include flex-center(flex-end);
+        @include rotate;
+
+        @include MQ(L) {
+            @include flex-center(center, column);
+            @include rotate(0deg);
+        }
+
+        .nav-item {
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 15px;
+            -webkit-transition: -webkit-transform 0.3s ease;
+            transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+            @include MQ(L) {}
+
+            button {
+                font-size: 14px;
+                font-weight: 300;
+
+                &:hover {
+                    -webkit-transition: color 0.6s ease;
+                    transition: color 0.6s ease;
+                    color: $active-color;
+                }
+            }
+        }
+
+        .nav-item:nth-of-type(1),
+        .nav-item:nth-of-type(2),
+        .nav-item:nth-of-type(3) {
+            -webkit-transform: skewX(15deg);
+                    transform: skewX(15deg);
+
+            &:hover {
+                -webkit-transform: skewX(-15deg);
+                        transform: skewX(-15deg);
+            }
+        }
+
+        .nav-item:nth-of-type(2) {
+            @include MQ(M) {
+                -webkit-transform: skewX(-15deg);
+                        transform: skewX(-15deg);
+                &:hover {
+                    -webkit-transform: skewX(15deg);
+                            transform: skewX(15deg);
+                }
+            }
+        }
+    }
+}
+
+main {
+    @include fullscreen-position;
+    @include fullscreen-flex;
+    min-height: 0;
+    z-index: 1;
+
+    header,
+    section,
+    .content {
+        @include fullscreen-flex;
+    }
+
+    .content {
+        padding: 10px 80px;
+        will-change: opacity;
+        @include flex-center(space-evenly, column);
+        min-height: 0;
+
+        @include MQ(L) {
+            @include flex-center(flex-start, row);
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        }
+    }
+
+    header {
+        line-height: 25px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: center;
+        will-change: font-size, line-height;
+
+        @include MQ(S) {
+            -webkit-transition: font-size 1s ease, line-height 0.7s ease;
+            transition: font-size 1s ease, line-height 0.7s ease;
+        }
+
+        @include MQ(L) {
+            font-size: 14px;
+            line-height: 27px;
+            -webkit-transition: font-size 1s ease, line-height 0.7s ease;
+            transition: font-size 1s ease, line-height 0.7s ease;
+        }
+
+        .content {
+            opacity: 0;
+            padding: 10px 40px;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+            @include flex-center(space-between, column);
+
+
+            h1 {
+                font-size: 11px;
+                font-weight: 300;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 640px;
+                -webkit-backdrop-filter: blur(10px);
+                        backdrop-filter: blur(10px);
+                pointer-events: none;
+
+                @include MQ(S) {
+                    -webkit-transition: font-size 1s ease, margin 0.8s ease;
+                    transition: font-size 1s ease, margin 0.8s ease;
+                }
+
+                @include MQ(M) {
+                    max-width: none;
+                    width: 100%;
+                }
+
+                @include MQ(L) {
+                    font-size: 14px;
+                }
+
+                span {
+                    color: $accent-color;
+                }
+            }
+
+            #headline {
+                font-size: 30px;
+                letter-spacing: 12px;
+                will-change: transform;
+                pointer-events: none;
+                @include flex-center(center, column);
+
+                @include MQ(S) {
+                    -webkit-transition: letter-spacing 0.5s ease, -webkit-transform 1.2s ease;
+                    transition: transform 1.2s ease, letter-spacing 0.5s ease, -webkit-transform 1.2s ease;
+                    -webkit-transform: translateX(0);
+                            transform: translateX(0);
+                }
+
+                @include MQ(L) {
+                    font-size: 50px;
+                    letter-spacing: 18px;
+                    -webkit-transform: translateX(200px);
+                            transform: translateX(200px);
+                }
+
+                @include MQ(XL) {
+                    font-size: 60px;
+                    letter-spacing: 22px;
+                    -webkit-transform: translateX(380px);
+                            transform: translateX(380px);
+                }           
+
+                @include MQH(SMH) {
+                    font-size: 20px;
+                    letter-spacing: 16px;
+                    @include flex-center(center, row);
+                }
+
+                @media screen and (min-width: $M) and (max-height: 615px) {
+                    font-size: 30px;
+                    letter-spacing: 18px;
+                }
+
+                @include MQH(LH) {
+                    font-size: 55px;
+                    letter-spacing: 25px;
+                    -webkit-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+                }
+
+                @media screen and (min-width: $XL) and (max-height: 723px) {
+                    -webkit-transform: translateX(340px);
+                            transform: translateX(340px);
+                }
+
+                span {
+                    margin: 20px 0;
+
+                    @include MQH(MH) {
+                        -webkit-transition: all 0.5s ease;
+                        transition: all 0.5s ease;
+                    }
+
+                    @include MQH(LH) {
+                        margin: 40px 0;
+                        -webkit-transition: all 0.5s ease;
+                        transition: all 0.5s ease;
+                    }
+                }
+
+                .x {
+                    color: $headline-color;
+                    font-size: 25px;
+                    font-weight: 300;
+
+                    @include MQ(L) {
+                        font-size: 30px;
+                    }
+                }
+            }
+
+            .toolset {
+                @include flex-center($direction: column);
+                margin-bottom: 10px;
+                pointer-events: none;
+                width: 100%;
+                max-width: 640px;
+                font-weight: 300;
+
+                @include MQ(M) {
+                    max-width: none;
+                    width: 100%;
+                }
+
+                p {
+                    max-width: 440px;
+                    -webkit-backdrop-filter: blur(10px);
+                            backdrop-filter: blur(10px);
+
+                    @include MQ(M) {
+                        max-width: none;
+                    }
+                }
+
+                .button-container {
+                    @include flex-center;
+                    margin-top: 20px;
+
+                    .tool-img {
+                        width: 35px;
+                        font-size: 20px;
+                        margin: 0 8px;
+                        color: $accent-color;
+                        opacity: 0.8;
+                        pointer-events: none;
+
+                        &:hover {
+                            cursor: auto;
+                        }
+
+                        @include MQ(S) {
+                            -webkit-transition: font-size 1s ease, margin 0.8s ease;
+                            transition: font-size 1s ease, margin 0.8s ease;
+                        }
+
+                        @include MQ(L) {
+                            font-size: 22px;
+                            margin: 0 10px;
+                            -webkit-transition: font-size 1s ease, margin 0.8s ease;
+                            transition: font-size 1s ease, margin 0.8s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #works-section {
+        @include flex-center(center, column);
+
+        #works-buttons-container {
+            @include fullscreen-flex(center, row);
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            z-index: 3;
+            padding: 40px 30px;
+            width: 100%;
+
+            button {
+                @include flex-center(center, column);
+                width: 50%;
+                position: relative;
+                color: $main-text-color;
+                text-transform: uppercase;
+                text-align: center;
+                padding: 15px;
+                letter-spacing: 3px;
+                opacity: 0.75;
+                &:active {
+                    border: none;
+                }
+
+                @include MQ(780px) {
+                    &:hover {
+                        -webkit-transition: letter-spacing 0.8s ease, color 1.2s ease, -webkit-transform 0.3s ease;
+                        transition: letter-spacing 0.8s ease, color 1.2s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+                        letter-spacing: 5px;
+                        color: $active-color;
+                        -webkit-transform: perspective(300px) rotateY(20deg) translate(0);
+                                transform: perspective(300px) rotateY(20deg) translate(0);
+                    }
+                    &:active {
+                        border: none;
+                        letter-spacing: 5px;
+                    }
+    
+                    &:target {
+                        letter-spacing: 5px;
+                    }
+    
+                    &:focus {
+                        letter-spacing: 5px;
+                    }
+                }
+                
+                @include MQ(L) {
+                    width: 33.3%;
+
+                    &:hover {
+                        -webkit-transition: letter-spacing 0.8s ease, color 1.2s ease;
+                        transition: letter-spacing 0.8s ease, color 1.2s ease;
+                        letter-spacing: 8px;
+                    }
+
+                    &:active {
+                        letter-spacing: 8px;
+                    }
+
+                    &:target {
+                        letter-spacing: 8px;
+                    }
+    
+                    &:focus {
+                        letter-spacing: 8px;
+                    }
+                }
+
+                .works-logo {
+                    font-size: 20px;
+                    font-weight: 500;
+
+                    @include MQ(L) {
+                        font-size: 32px;
+                    }
+
+                    @include MQ(XL) {
+                        font-size: 35px;
+                    }
+
+                    @media screen and (max-width: $L) and (min-height: 800px) {
+                        font-size: 30px;
+                    }
+                }
+
+                .works-title {
+                    font-size: 10px;
+                    display: none;
+                }
+            }
+
+            #fansi-button {
+                .works-logo {
+                    font-family: 'Playfair Display';
+                    font-size: 18px;
+
+                    @include MQ(L) {
+                        font-size: 25px;
+                    }
+
+                    @include MQ(XL) {
+                        font-size: 30px;
+                    }
+
+                    @media screen and (max-width: $L) and (min-height: 800px) {
+                        font-size: 25px;
+                    }
+                }
+            }
+
+            #syzygy-button {
+                .works-logo {
+                    font-family: 'Yellowtail';
+                    text-transform: lowercase;
+                    font-size: 32px;
+
+                    @include MQ(L) {
+                        font-size: 42px;
+                    }
+
+                    @media screen and (max-width: $L) and (min-height: 800px) {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            #film-button {
+                .works-logo {
+                    font-family: 'Pacifico';
+                    text-transform: lowercase;
+                }
+            }
+
+            #roman-button {
+                @include MQ(L) {
+                    &:hover {
+                        -webkit-transition: letter-spacing 0.4s ease, color 1.2s ease;
+                        transition: letter-spacing 0.4s ease, color 1.2s ease;
+                        letter-spacing: 10px;
+                    }
+
+                    &:active {
+                        letter-spacing: 10px;
+                    }
+
+                    &:target {
+                        letter-spacing: 10px;
+                    }
+    
+                    &:focus {
+                        letter-spacing: 10px;
+                    }
+                }
+
+                .works-logo {
+                    font-size: 32px;
+                    font-family: 'Playfair Display';
+
+                    @include MQ(L) {
+                        font-size: 48px;
+                    }
+
+                    @media screen and (max-width: $L) and (min-height: 800px) {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            #drum-button {
+                .works-logo {
+                    font-family: 'Permanent Marker';
+                }
+            }
+
+            #portfolio-button {
+                .Logo-icon {
+                    font-size: 50px;
+
+                    @include MQ(L) {
+                        font-size: 70px;
+                    }
+
+                    @include MQ(XL) {
+                        font-size: 80px;
+                    }
+
+                    @media screen and (max-width: $L) and (min-height: 800px) {
+                        font-size: 80px;
+                    }
+                }
+            }
+        }
+
+        #works-display-container {
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            @include flex-center(center, column);
+            margin: auto;                  
+
+            button {
+                color: $accent-color;
+                margin: 15px 0 0 10px;
+                font-size: 25px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                -ms-flex-item-align: start;
+                    align-self: flex-start;
+                -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
+
+                &:hover {
+                    -webkit-transition: color 0.5s ease;
+                    transition: color 0.5s ease;
+                    color: $active-color;
+                }
+
+                &:active {
+                    color: $active-color;
+                }
+
+                @include MQ(S) {
+                    -webkit-transition: font-size 0.5s ease-in, margin 0.5s ease;
+                    transition: font-size 0.5s ease-in, margin 0.5s ease;
+                }
+
+                @include MQ(L) {
+                    font-size: 40px;
+                    margin: 25px 0 0 30px;
+                }
+
+                @include MQ(XL) {
+                    font-size: 60px;
+                    margin: 15px 0 0 30px;
+                }
+
+                @media screen and (max-height: 538px) and (min-width: $L) {
+                    font-size: 35px;
+                    margin: 70px 0 0 30px;
+                }
+
+                @media screen and (max-width: $M) and (min-height: 800px) {
+                    font-size: 35px;
+                }
+            }
+
+            .work-display {
+                padding: 10vh 20px;
+                will-change: padding;
+                -webkit-perspective: 100px;
+                        perspective: 100px;
+                overflow-y: scroll;
+                min-height: 0;
+                -webkit-box-pack: initial;
+                    -ms-flex-pack: initial;
+                        justify-content: initial;
+                -webkit-box-align: initial;
+                    -ms-flex-align: initial;
+                        align-items: initial;
+                margin: auto;
+                scrollbar-width: none;
+                &:-webkit-scrollbar { 
+                    background: transparent; 
+                } 
+
+                @include MQ(S) {
+                    -webkit-transition: padding 0.7s ease 1s;
+                    transition: padding 0.7s ease 1s;
+                }
+
+                @include MQH(667px) {
+                    -webkit-box-pack: space-evenly;
+                        -ms-flex-pack: space-evenly;
+                            justify-content: space-evenly;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                }
+
+                @include MQH(SH) {
+                    -webkit-box-pack: initial;
+                        -ms-flex-pack: initial;
+                            justify-content: initial;
+                    -webkit-box-align: initial;
+                        -ms-flex-align: initial;
+                            align-items: initial;
+                }
+
+                @include MQ(780px) {
+                    -webkit-transition: -webkit-transform 0.1s linear !important;
+                    transition: transform 0.1s linear, -webkit-transform 0.1s linear !important;
+                    -webkit-transform: perspective(110vw) rotateY(17deg) translate(0) translateZ(0);
+                            transform: perspective(110vw) rotateY(17deg) translate(0) translateZ(0);
+                    -webkit-backface-visibility: hidden;
+                            backface-visibility: hidden;
+                    -webkit-font-smoothing: subpixel-antialiased;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                }
+
+                @include MQ(L) {
+                    padding: 0 140px;
+                    height: 80%;
+                }
+
+                .display-title {
+                    letter-spacing: 8px;
+                    font-weight: 100;
+                    font-size: 24px;
+                    margin: 15px auto 20px auto;
+                    text-align: center;
+                    text-transform: uppercase;
+
+                    @include MQ(S) {
+                        -webkit-transition: font-size 0.5s ease, margin 0.5s ease, text-align 0.6s ease;
+                        transition: font-size 0.5s ease, margin 0.5s ease, text-align 0.6s ease;
+                    }
+
+                    @include MQ(L) {
+                        width: 100%;
+                        font-size: 52px;
+                        margin: 0 0 0 5vw;
+                        text-align: left;
+                    }
+
+                    @media screen and (max-width: $M) and (min-height: 800px) {
+                        font-size: 40px;
+                    }
+                }
+
+                video {
+                    width: 280px !important;
+                    border: 2px solid $main-text-color;
+                    will-change: width !important;
+                    margin: 0 auto !important;
+                    display: block;
+
+                    @include MQ(S) {
+                        -webkit-transition: width 0.4s ease !important;
+                        transition: width 0.4s ease !important;
+                    }
+
+                    @include MQ(500px) {
+                        width: 400px !important;
+                    }
+
+                    @include MQ(M) {
+                        width: 540px !important;
+                    }
+
+                    @include MQ(L) {
+                        margin: 0 0 5vh 5vw;
+                        width: 350px !important;
+                    }
+
+                    @include MQ(1200px) {
+                        width: 450px !important;
+                    }
+
+                    @include MQ(XL) {
+                        width: 550px !important;
+                    }
+
+                    @include MQ(1600px) {
+                        width: 650px !important;
+                    }
+
+                    @include MQ(1800px) {
+                        width: 750px !important;
+                    }
+                }
+
+                .display-text {
+                    @include text-formatting;
+
+                    @include MQ(L) {
+                        margin-left: 4vw;
+                    }
+
+                    .stack {
+                        font-size: 10px;
+                        font-weight: 500;
+                        text-align: center;
+                        letter-spacing: 5px;
+                        margin: 10px auto 40px auto;
+
+                        @include MQ(L) {
+                            font-size: 12px;
+                        }
+
+                        @include MQ(XL) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            #syzygy-display {
+                overflow-y: scroll;
+                min-height: 0;
+                -webkit-box-pack: initial;
+                    -ms-flex-pack: initial;
+                        justify-content: initial;
+                -webkit-box-align: initial;
+                    -ms-flex-align: initial;
+                        align-items: initial;
+                margin: auto;
+
+                @include MQH(667px) {
+                    -webkit-box-pack: space-evenly;
+                        -ms-flex-pack: space-evenly;
+                            justify-content: space-evenly;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                }
+
+                @media screen and (max-height: 657px) and (min-width: $L) {
+                    -webkit-box-align: start;
+                        -ms-flex-align: start;
+                            align-items: flex-start;
+                    top: 3vh;
+                }
+
+                video {
+                    @media screen and (max-height: 657px) and (min-width: $L) {
+                        margin-top: 15vh;
+                    }
+                }
+            }
+
+            #roman-display, #drum-display, #portfolio-display {
+                @include MQH(MH) {
+                    padding-top: 20vh;
+                }
+
+                @media screen and (max-height: $SH) and (max-width: $L) {
+                    padding-top: 10vh;
+                }
+            }
+
+            #portfolio-display {
+                @include MQ(L) {
+                    @include flex-center(center, column);
+                    -webkit-box-align: center !important;
+                        -ms-flex-align: center !important;
+                            align-items: center !important;
+                    -ms-flex-wrap: nowrap;
+                        flex-wrap: nowrap;
+                }
+                @include MQH(667px) {
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                }
+
+                .Logo-icon {
+                    font-size: 120px;
+                    margin: 0 auto;
+
+                    @include MQ(L) {
+                        font-size: 170px;
+                    }
+
+                    @include MQ(XL) {
+                        font-size: 200px;
+                    }
+                }
+
+                .display-text {
+                    @include MQ(L) {
+                        width: 680px !important;
+                        margin: 0 !important;
+                    }
+
+                    @include MQ(1200px) {
+                        width: 740px !important;
+                    }
+
+                    @include MQ(XL) {
+                        width: 940px !important;
+                    }
+
+                    p {
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #bio-section {
+        @include flex-center(center, column);
+
+        #bio-container {
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            @include flex-center(center, column);
+            margin: auto; 
+            
+            .bio-content {
+                padding: 0 20px;
+                -webkit-perspective: 100px;
+                        perspective: 100px;
+                overflow-y: scroll;
+                -webkit-box-pack: initial;
+                    -ms-flex-pack: initial;
+                        justify-content: initial;
+                -webkit-box-align: initial;
+                    -ms-flex-align: initial;
+                        align-items: initial;
+                min-height: 0;
+                margin: auto;
+                scrollbar-width: none;
+                &:-webkit-scrollbar { 
+                    background: transparent; 
+                }
+
+                @include MQH(SH) {
+                    top: 2vh;
+                }
+
+                @include MQH(667px) {
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                }
+
+                @include MQH(SH) {
+                    -webkit-box-pack: initial;
+                        -ms-flex-pack: initial;
+                            justify-content: initial;
+                    -webkit-box-align: initial;
+                        -ms-flex-align: initial;
+                            align-items: initial;
+                }
+
+                @include MQ(780px) {
+                    -webkit-transition: -webkit-transform 0.1s linear !important;
+                    transition: transform 0.1s linear, -webkit-transform 0.1s linear !important;
+                    -webkit-transform: perspective(110vw) rotateY(17deg) translate(0) translateZ(0);
+                            transform: perspective(110vw) rotateY(17deg) translate(0) translateZ(0);
+                    -webkit-backface-visibility: hidden;
+                            backface-visibility: hidden;
+                    -webkit-font-smoothing: subpixel-antialiased;
+                }
+
+                @include MQ(L) {
+                    @include flex-center(center, column);
+                    -ms-flex-wrap: nowrap;
+                        flex-wrap: nowrap;
+                }
+
+                .display-title {
+                    letter-spacing: 8px;
+                    font-weight: 300;
+                    font-size: 24px;
+                    margin: 20px auto;
+                    text-align: center;
+                    text-transform: uppercase;
+
+                    @include MQ(S) {
+                        -webkit-transition: font-size 0.5s ease;
+                        transition: font-size 0.5s ease;
+                    }
+
+                    @include MQ(L) {
+                        width: 100%;
+                        font-size: 52px;
+                    }
+                }
+                
+                .bio-text {
+                    @include text-formatting;
+                    margin: 0 auto;
+                    will-change: width;
+
+                    @include MQ(S) {
+                        -webkit-transition: width 1s ease !important;
+                        transition: width 1s ease !important;
+                    }
+
+                    @include MQ(L) {
+                        width: 680px !important;
+                    }
+
+                    @include MQ(1200px) {
+                        width: 740px !important;
+                    }
+
+                    @include MQ(XL) {
+                        width: 940px !important;
+                    }
+
+                    span {
+                        color: $accent-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @include flex-center;
+    @include header-footer;
+    -webkit-transform-origin: 50%  51%;
+
+    will-change: transform, margin-left;
+
+    @include MQ(S) {
+        -webkit-transition: margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
+        transition: transform 0.4s ease-out, margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+        margin-left: 0;
+    }
+
+    @include MQ(L) {
+        @include rotate(-90deg);
+        margin-left: 8vw;
+        padding-bottom: 50px;
+        border-bottom: 1px solid $main-text-color;
+        -webkit-transition: margin-left 0.3s ease, -webkit-transform 0.6s ease;
+        transition: transform 0.6s ease, margin-left 0.3s ease, -webkit-transform 0.6s ease;
+    }
+
+    #social-buttons {
+        @include flex-center(center, column);
+
+        @include MQ(L) {}
+
+        button {
+            background: transparent;
+            color: $accent-color;
+            border: none;
+            width: 54px;
+            margin: 15px;
+            
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .fa {
+                font-size: 20px;
+                margin: 0 10px;
+
+                &:hover {
+                    -webkit-transition: all 0.6s ease;
+                    transition: all 0.6s ease;
+                    color: $active-color;
+                }
+
+                @include MQ(L) {
+                    font-size: 24px;
+                }
+
+                @media screen and (max-width: $M) and (min-height: 800px) {
+                    font-size: 24px;
+                }
+            }
+        }
+        a {
+            -webkit-transition: -webkit-transform 0.3s ease;
+            transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+        }
+
+        a:nth-of-type(1),
+        a:nth-of-type(2),
+        a:nth-of-type(3),
+        a:nth-of-type(4) {
+            -webkit-transform: skewX(15deg);
+                    transform: skewX(15deg);
+
+            &:hover {
+                -webkit-transform: skewX(-15deg);
+                        transform: skewX(-15deg);
+            }
+
+        }
+
+        a:nth-of-type(2),
+        a:nth-of-type(4) {
+            @include MQ(M) {
+                -webkit-transform: skewX(-15deg);
+                        transform: skewX(-15deg);
+
+                &:hover {
+                    -webkit-transform: skewX(15deg);
+                            transform: skewX(15deg);
+                }
+            }         
+        }
+
+    }
+}

@@ -1,0 +1,55 @@
+.switch {
+    position: absolute;
+    top: 12vh;
+    left: 4vw;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 18px;
+    border: 1px solid $accent-color;
+    @include rotate;
+    transition: all 0.3s;
+
+    @include MQ(L) {
+      top: 60px;
+      left: 7vw;
+      border: 2px solid $accent-color;
+      width: 44px;
+      height: 24px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+      background-color: transparent;
+      border: 1px solid $accent-color;
+      top: -1px;
+      left: 0px;
+      transition: all 0.3s;
+
+      @include MQ(L) {
+        border: 2px solid $accent-color;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+  input[type='checkbox']:checked+.switch::after {
+    transform: translateX(20px);
+  }
+
+  input[type='checkbox']:checked+.switch {
+    background-color: $toggle-color;
+  }
+
+  .offscreen {
+    position: absolute;
+    left: -9999px;
+  }
+  
