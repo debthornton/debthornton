@@ -99,7 +99,3 @@ function videoControls() {
     }
 }
 
-window.addEventListener('load', function() {
-    videoControls();
-})
-

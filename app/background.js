@@ -55,7 +55,9 @@ header.addEventListener("mousemove", e => {
     } else {
         page.style.transform = '';
         page2.style.transform = '';
-    }   
+    }
+
+    
 });
 
 //control blur on background
