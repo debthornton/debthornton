@@ -13,12 +13,14 @@ body {
     @include flex-center($j-content: space-between);
     color: $main-text-color;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     min-width: 360px;
     min-height: 360px;
     position: relative;
     -webkit-perspective: 150vw;
             perspective: 150vw;
+    transition: height 0.5s ease;
 
     @media screen and (max-width: 600px) and (min-height: 800px) {
         min-width: 430px;
@@ -217,6 +219,7 @@ body {
         left: 0;
         width: 102vw;
         height: 102vh;
+        height: calc(var(--vh, 1.2vh) * 100);
         -webkit-filter: contrast(105%) grayscale(100%);
                 filter: contrast(105%) grayscale(100%);
         background-color: darken(#1C0D11, 5%);
@@ -285,16 +288,15 @@ body {
 nav {
     @include flex-center(center);
     @include header-footer;
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
+    -ms-flex-order: 3;
+             order: 3;
     will-change: transform, margin-right;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
 
     @include MQ(S) {
-        -webkit-transition: margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
-        transition: transform 0.4s ease-out, margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
+        -webkit-transition: margin-right 0.3s ease, -webkit-transform 0.4s ease-out;
+        transition: transform 0.4s ease-out, margin-right 0.3s ease, -webkit-transform 0.4s ease-out;
         -webkit-transform: rotate(0deg);
                 transform: rotate(0deg);
         margin-right: 0;
@@ -419,6 +421,10 @@ main {
                 -ms-flex-pack: justify;
                     justify-content: space-between;
             @include flex-center(space-between, column);
+
+            // @media screen and (max-width: 480px) and (max-height: 1024px) {
+            //     padding: 45px 40px;
+            // }
 
 
             h1 {
@@ -780,6 +786,7 @@ main {
         #works-display-container {
             width: 100%;
             height: 100%;
+            height: calc(var(--vh, 1.2vh) * 100);
             min-height: 0;
             @include flex-center(center, column);
             margin: auto;                  
@@ -1087,6 +1094,7 @@ main {
         #bio-container {
             width: 100%;
             height: 100%;
+            height: calc(var(--vh, 1.2vh) * 100);
             min-height: 0;
             @include flex-center(center, column);
             margin: auto; 
