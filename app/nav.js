@@ -1,6 +1,5 @@
 // nav/footer rotation animations
 
-
 function navSwipe() {
     if(nav.classList.contains('reverse-nav-swipe')) {
         nav.classList.remove('reverse-nav-swipe');

@@ -1204,7 +1204,7 @@ footer {
 
     @include MQ(S) {
         -webkit-transition: margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
-        transition: transform 0.4s ease-out, margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
+        transition: transform 0.4s ease-out, margin-left 0.3s ease;
         -webkit-transform: rotate(0deg);
                 transform: rotate(0deg);
         margin-left: 0;
@@ -1236,7 +1236,6 @@ footer {
             width: 54px;
             margin: 15px;
             
-
             &:hover {
                 cursor: pointer;
             }
@@ -1269,14 +1268,15 @@ footer {
         a:nth-of-type(2),
         a:nth-of-type(3),
         a:nth-of-type(4) {
-            -webkit-transform: skewX(15deg);
-                    transform: skewX(15deg);
+            @include MQ(M) {
+                -webkit-transform: skewX(15deg);
+                transform: skewX(15deg);
 
-            &:hover {
-                -webkit-transform: skewX(-15deg);
-                        transform: skewX(-15deg);
+                &:hover {
+                    -webkit-transform: skewX(-15deg);
+                    transform: skewX(-15deg);
+                }
             }
-
         }
 
         a:nth-of-type(2),
@@ -1291,6 +1291,5 @@ footer {
                 }
             }         
         }
-
     }
 }

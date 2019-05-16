@@ -2355,6 +2355,8 @@ footer {
 @media only screen and (min-width: 320px) {
   footer {
     -webkit-transition: margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
+    transition: margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out, margin-left 0.3s ease;
     transition: transform 0.4s ease-out, margin-left 0.3s ease, -webkit-transform 0.4s ease-out;
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -2437,20 +2439,21 @@ footer #social-buttons a {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
-footer #social-buttons a:nth-of-type(1),
-footer #social-buttons a:nth-of-type(2),
-footer #social-buttons a:nth-of-type(3),
-footer #social-buttons a:nth-of-type(4) {
-  -webkit-transform: skewX(15deg);
-  transform: skewX(15deg);
-}
-
-footer #social-buttons a:nth-of-type(1):hover,
-footer #social-buttons a:nth-of-type(2):hover,
-footer #social-buttons a:nth-of-type(3):hover,
-footer #social-buttons a:nth-of-type(4):hover {
-  -webkit-transform: skewX(-15deg);
-  transform: skewX(-15deg);
+@media only screen and (min-width: 768px) {
+  footer #social-buttons a:nth-of-type(1),
+  footer #social-buttons a:nth-of-type(2),
+  footer #social-buttons a:nth-of-type(3),
+  footer #social-buttons a:nth-of-type(4) {
+    -webkit-transform: skewX(15deg);
+    transform: skewX(15deg);
+  }
+  footer #social-buttons a:nth-of-type(1):hover,
+  footer #social-buttons a:nth-of-type(2):hover,
+  footer #social-buttons a:nth-of-type(3):hover,
+  footer #social-buttons a:nth-of-type(4):hover {
+    -webkit-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+  }
 }
 
 @media only screen and (min-width: 768px) {

@@ -91,11 +91,3 @@ function contentMovement() {
     }, 1500)  
 }
 
-function videoControls() {
-    if(window.innerWidth <= 780) {
-        video.forEach(function(vid) {
-            vid.setAttribute('controls');
-        })
-    }
-}
-
