@@ -77,7 +77,7 @@
     -webkit-transform: translateX(15px);
     transform: translateX(15px);
     -webkit-transition: -webkit-transform 0.4s ease;
-    transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease;
     will-change: transform;
 }
 
@@ -85,15 +85,15 @@
     -webkit-transform: translateX(-15px);
     transform: translateX(-15px);
     -webkit-transition: -webkit-transform 0.4s ease;
-    transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease;
     will-change: transform;
 }
 
 .reverse-nav-swipe {
     -webkit-transform: rotate(-90deg) translateX(0);
     transform: rotate(-90deg) translateX(0);
-    -webkit-transition: -webkit-transform 0.4s ease;;
-    transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+    -webkit-transition: -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease;
     will-change: transform;
 }
 
@@ -102,7 +102,7 @@
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-transition: -webkit-transform 0.4s ease;
-    transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease;
     will-change: transform;
 }
 

@@ -55,8 +55,6 @@ body {
             margin: 0 auto;
             width: 100%;
             max-width: 640px;
-            -webkit-backdrop-filter: blur(10px);
-                    backdrop-filter: blur(10px);
             pointer-events: none;
 
             @include MQ(S) {
@@ -170,8 +168,6 @@ body {
 
             p {
                 max-width: 440px;
-                -webkit-backdrop-filter: blur(10px);
-                        backdrop-filter: blur(10px);
 
                 @include MQ(M) {
                     max-width: none;
@@ -267,7 +263,7 @@ body {
     }
     
     #background-2 {
-        z-index: -11;
+        z-index: -20;
         background-image: url('https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/blur.png');
         opacity: 0.5;
     
@@ -346,13 +342,16 @@ nav {
         .nav-item:nth-of-type(1),
         .nav-item:nth-of-type(2),
         .nav-item:nth-of-type(3) {
-            -webkit-transform: skewX(15deg);
-                    transform: skewX(15deg);
+            @include MQ(M) {
+                -webkit-transform: skewX(15deg);
+                transform: skewX(15deg);
 
-            &:hover {
-                -webkit-transform: skewX(-15deg);
-                        transform: skewX(-15deg);
+                &:hover {
+                    -webkit-transform: skewX(-15deg);
+                    transform: skewX(-15deg);
+                }
             }
+
         }
 
         .nav-item:nth-of-type(2) {
@@ -419,8 +418,6 @@ main {
             -webkit-box-pack: justify;
                 -ms-flex-pack: justify;
                     justify-content: space-between;
-            -webkit-backdrop-filter: blur(10px);
-                    backdrop-filter: blur(10px);
             @include flex-center(space-between, column);
 
 
@@ -430,8 +427,6 @@ main {
                 margin: 0 auto;
                 width: 100%;
                 max-width: 640px;
-                -webkit-backdrop-filter: blur(10px);
-                        backdrop-filter: blur(10px);
                 pointer-events: none;
 
                 @include MQ(S) {
@@ -545,8 +540,6 @@ main {
 
                 p {
                     max-width: 440px;
-                    -webkit-backdrop-filter: blur(10px);
-                            backdrop-filter: blur(10px);
 
                     @include MQ(M) {
                         max-width: none;
@@ -1206,9 +1199,7 @@ main {
 
 footer {
     @include flex-center;
-    @include header-footer;
-    -webkit-transform-origin: 50%  51%;
-
+    @include header-footer;    
     will-change: transform, margin-left;
 
     @include MQ(S) {
@@ -1217,6 +1208,11 @@ footer {
         -webkit-transform: rotate(0deg);
                 transform: rotate(0deg);
         margin-left: 0;
+    }
+
+    @include MQ(M) {
+        -webkit-transform-origin: 50%  51%;
+        transform-origin: 50%  51%;
     }
 
     @include MQ(L) {

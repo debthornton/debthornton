@@ -49,9 +49,13 @@ header.addEventListener("mousemove", e => {
 
     // page2.style.setProperty('--x', (-e.offsetX / 100) + "px");
     // page2.style.setProperty('--y', (-e.offsetY / 50) + "px");
-
-    page.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 45) + 'px) rotateX(' + (-e.offsetX / 50000) + 'deg)';
-    page2.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 45) + 'px) rotateX(' + (-e.offsetX / 50000) + 'deg)';
+    if(window.innerWidth >= 780) {
+        page.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 45) + 'px)';
+        page2.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 45) + 'px)';
+    } else {
+        page.style.transform = '';
+        page2.style.transform = '';
+    }   
 });
 
 //control blur on background

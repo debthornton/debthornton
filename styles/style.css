@@ -189,6 +189,8 @@ blockquote, q {
   -webkit-transform: translateX(15px);
   transform: translateX(15px);
   -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
   transition: transform 0.4s ease, -webkit-transform 0.4s ease;
   will-change: transform;
 }
@@ -197,6 +199,8 @@ blockquote, q {
   -webkit-transform: translateX(-15px);
   transform: translateX(-15px);
   -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
   transition: transform 0.4s ease, -webkit-transform 0.4s ease;
   will-change: transform;
 }
@@ -205,6 +209,8 @@ blockquote, q {
   -webkit-transform: rotate(-90deg) translateX(0);
   transform: rotate(-90deg) translateX(0);
   -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
   transition: transform 0.4s ease, -webkit-transform 0.4s ease;
   will-change: transform;
 }
@@ -213,6 +219,8 @@ blockquote, q {
   -webkit-transform: translateX(0);
   transform: translateX(0);
   -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
   transition: transform 0.4s ease, -webkit-transform 0.4s ease;
   will-change: transform;
 }
@@ -451,8 +459,6 @@ body #landing-page .box-1 {
   margin: 0 auto;
   width: 100%;
   max-width: 640px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   pointer-events: none;
 }
 
@@ -631,8 +637,6 @@ body #landing-page .box-2 {
 
 body #landing-page .box-2 p {
   max-width: 440px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 
 @media only screen and (min-width: 768px) {
@@ -747,7 +751,7 @@ body #background {
 }
 
 body #background-2 {
-  z-index: -11;
+  z-index: -20;
   background-image: url("https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/blur.png");
   opacity: 0.5;
 }
@@ -868,18 +872,19 @@ nav ul .nav-item button:hover {
   color: rgba(114, 77, 105, 0.589);
 }
 
-nav ul .nav-item:nth-of-type(1),
-nav ul .nav-item:nth-of-type(2),
-nav ul .nav-item:nth-of-type(3) {
-  -webkit-transform: skewX(15deg);
-  transform: skewX(15deg);
-}
-
-nav ul .nav-item:nth-of-type(1):hover,
-nav ul .nav-item:nth-of-type(2):hover,
-nav ul .nav-item:nth-of-type(3):hover {
-  -webkit-transform: skewX(-15deg);
-  transform: skewX(-15deg);
+@media only screen and (min-width: 768px) {
+  nav ul .nav-item:nth-of-type(1),
+  nav ul .nav-item:nth-of-type(2),
+  nav ul .nav-item:nth-of-type(3) {
+    -webkit-transform: skewX(15deg);
+    transform: skewX(15deg);
+  }
+  nav ul .nav-item:nth-of-type(1):hover,
+  nav ul .nav-item:nth-of-type(2):hover,
+  nav ul .nav-item:nth-of-type(3):hover {
+    -webkit-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1002,8 +1007,6 @@ main header .content {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1023,8 +1026,6 @@ main header .content h1 {
   margin: 0 auto;
   width: 100%;
   max-width: 640px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   pointer-events: none;
 }
 
@@ -1203,8 +1204,6 @@ main header .content .toolset {
 
 main header .content .toolset p {
   max-width: 440px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 
 @media only screen and (min-width: 768px) {
@@ -2344,8 +2343,6 @@ footer {
   z-index: 2;
   width: 70px;
   color: rgba(212, 181, 223, 0.747);
-  -webkit-transform-origin: 50%  51%;
-  transform-origin: 50%  51%;
   will-change: transform, margin-left;
 }
 
@@ -2362,6 +2359,13 @@ footer {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer {
+    -webkit-transform-origin: 50%  51%;
+    transform-origin: 50%  51%;
   }
 }
 
