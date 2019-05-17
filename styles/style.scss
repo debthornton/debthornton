@@ -7,7 +7,6 @@
 
 html {
     background: $background-color;
-    height: calc(var(--vh, 1vh) * 100);
 }
 
 body {
@@ -224,7 +223,7 @@ body {
         left: 0;
         width: 102vw;
         height: 102vh;
-        height: calc(var(--vh, 1.2vh) * 100);
+        // height: calc(var(--vh, 1.2vh) * 100);
         -webkit-filter: contrast(105%) grayscale(100%);
                 filter: contrast(105%) grayscale(100%);
         background-color: darken(#1C0D11, 5%);

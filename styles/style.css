@@ -304,7 +304,7 @@ blockquote, q {
 .switch {
   position: absolute;
   top: 12vh;
-  left: 4vw;
+  right: 2vw;
   display: inline-block;
   width: 40px;
   height: 20px;
@@ -320,7 +320,7 @@ blockquote, q {
 @media only screen and (min-width: 1024px) {
   .switch {
     top: 60px;
-    left: 7vw;
+    right: 7vw;
     border: 2px solid rgba(212, 181, 223, 0.747);
     width: 44px;
     height: 24px;
@@ -367,7 +367,6 @@ input[type='checkbox']:checked + .switch {
 
 html {
   background: #0c0b0b;
-  height: calc(var(--vh, 1vh) * 100);
 }
 
 body {
@@ -709,7 +708,6 @@ body #background-2 {
   left: 0;
   width: 102vw;
   height: 102vh;
-  height: calc(var(--vh, 1.2vh) * 100);
   -webkit-filter: contrast(105%) grayscale(100%);
   filter: contrast(105%) grayscale(100%);
   background-color: #0b0506;
