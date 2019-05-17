@@ -293,6 +293,7 @@ body {
 nav {
     @include flex-center(center);
     @include header-footer;
+    width: 50px;
     -ms-flex-order: 3;
              order: 3;
     will-change: transform, margin-right;
@@ -333,7 +334,6 @@ nav {
             margin: 15px;
             -webkit-transition: -webkit-transform 0.3s ease;
             transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-            @include MQ(L) {}
 
             button {
                 font-size: 14px;
