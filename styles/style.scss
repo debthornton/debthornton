@@ -386,7 +386,7 @@ main {
     @include fullscreen-flex;
     min-height: 0;
     z-index: 1;
-    height: calc(var(--vh, 1vh) * 100); 
+    // height: calc(var(--vh, 1vh) * 100); 
 
     header,
     section,

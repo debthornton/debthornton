@@ -947,7 +947,6 @@ main {
   height: calc(var(--vh, 1.2vh) * 100);
   min-height: 0;
   z-index: 1;
-  height: calc(var(--vh, 1vh) * 100);
 }
 
 main header,
