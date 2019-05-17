@@ -367,6 +367,7 @@ input[type='checkbox']:checked + .switch {
 
 html {
   background: #0c0b0b;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 body {
