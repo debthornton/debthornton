@@ -391,6 +391,7 @@ main {
         will-change: opacity;
         @include flex-center(space-evenly, column);
         min-height: 0;
+        
 
         @include MQ(L) {
             @include flex-center(flex-start, row);
