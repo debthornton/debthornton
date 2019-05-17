@@ -537,7 +537,7 @@ body #landing-page #landing-headline {
   }
 }
 
-@media only screen and (max-height: 615px) {
+@media only screen and (max-height: 550px) {
   body #landing-page #landing-headline {
     font-size: 20px;
     letter-spacing: 16px;
@@ -597,6 +597,12 @@ body #landing-page #landing-headline span {
     margin: 40px 0;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  body #landing-page #landing-headline span {
+    margin: 15px auto;
   }
 }
 
@@ -1109,7 +1115,7 @@ main header .content #headline {
   }
 }
 
-@media only screen and (max-height: 615px) {
+@media only screen and (max-height: 550px) {
   main header .content #headline {
     font-size: 20px;
     letter-spacing: 16px;
@@ -1168,6 +1174,12 @@ main header .content #headline span {
     margin: 40px 0;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  main header .content #headline span {
+    margin: 15px auto;
   }
 }
 

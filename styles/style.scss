@@ -143,6 +143,10 @@ body {
                     -webkit-transition: all 0.5s ease;
                     transition: all 0.5s ease;
                 }
+
+                @media screen and (max-height: 600px) {
+                    margin: 15px auto;
+                }
             }
 
             .x {
@@ -487,7 +491,7 @@ main {
                     font-size: 20px;
                     letter-spacing: 16px;
                     @include flex-center(center, row);
-                }
+                }          
 
                 @media screen and (min-width: $M) and (max-height: 615px) {
                     font-size: 30px;
@@ -518,6 +522,10 @@ main {
                         margin: 40px 0;
                         -webkit-transition: all 0.5s ease;
                         transition: all 0.5s ease;
+                    }
+
+                    @media screen and (max-height: 600px) {
+                        margin: 15px auto;
                     }
                 }
 
