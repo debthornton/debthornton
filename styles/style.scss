@@ -238,7 +238,7 @@ body {
         --percentX: 45%;
         --percentY: 50%;
         -webkit-transition: -webkit-filter 1.4s ease;
-        transition: filter 1.4s ease, -webkit-filter 1.4s ease;
+        transition: filter 1.4s ease;
     
         &:before {
             content: '';

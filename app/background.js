@@ -11,6 +11,8 @@ window.addEventListener('load', () => {
 });
 
 function toggleColorMode() {
+    page.style.transition = 'transition: filter 1.4s ease';
+    page2.style.transition = 'transition: filter 1.4s ease';
     if(page.style.filter == 'contrast(117%) grayscale(100%)') {
         page.style.filter = 'contrast(105%) grayscale(0)';
         page2.style.filter = 'contrast(105%) grayscale(0)';
