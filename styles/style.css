@@ -723,9 +723,10 @@ body #background-2 {
   --percentX: 45%;
   --percentY: 50%;
   -webkit-transition: -webkit-filter 1.4s ease;
-  transition: -webkit-filter 1.4s ease;
-  transition: filter 1.4s ease;
-  transition: filter 1.4s ease, -webkit-filter 1.4s ease;
+  -webkit-transition: opacity 0.8s ease 0.5s, -webkit-filter 1.4s ease;
+  transition: opacity 0.8s ease 0.5s, -webkit-filter 1.4s ease;
+  transition: filter 1.4s ease, opacity 0.8s ease 0.5s;
+  transition: filter 1.4s ease, opacity 0.8s ease 0.5s, -webkit-filter 1.4s ease;
 }
 
 body #background:before,

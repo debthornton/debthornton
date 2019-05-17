@@ -63,7 +63,6 @@ header.addEventListener("mousemove", e => {
 //control blur on background
 
 function addBlur() {
-    page.style.transition = 'opacity 0.8s ease 0.5s';
     page.style.opacity = 0;
 }
 
