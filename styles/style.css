@@ -395,13 +395,13 @@ body {
 
 @media screen and (orientation: portrait) {
   body {
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 
 @media screen and (orientation: landscape) {
   body {
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 
@@ -947,6 +947,7 @@ main {
   height: calc(var(--vh, 1.2vh) * 100);
   min-height: 0;
   z-index: 1;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 main header,

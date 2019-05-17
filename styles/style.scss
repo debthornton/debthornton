@@ -23,10 +23,10 @@ body {
     transition: height 0.5s ease;
 
     @media screen and (orientation: portrait) {
-        height: 100%;
+        height: calc(var(--vh, 1vh) * 100);
       }
       @media screen and (orientation: landscape) {
-        height: 100%;
+        height: calc(var(--vh, 1vh) * 100);
       }
 
     @media screen and (max-width: 600px) and (min-height: 800px) {
@@ -386,7 +386,7 @@ main {
     @include fullscreen-flex;
     min-height: 0;
     z-index: 1;
-    // height: calc(var(--vh, 1vh) * 100); 
+    height: calc(var(--vh, 1vh) * 100); 
 
     header,
     section,
