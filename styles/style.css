@@ -538,7 +538,7 @@ body #landing-page #landing-headline {
   }
 }
 
-@media only screen and (max-height: 550px) {
+@media only screen and (max-height: 540px) {
   body #landing-page #landing-headline {
     font-size: 20px;
     letter-spacing: 16px;
@@ -603,7 +603,7 @@ body #landing-page #landing-headline span {
 
 @media screen and (max-height: 600px) {
   body #landing-page #landing-headline span {
-    margin: 15px auto;
+    margin: 12px auto;
   }
 }
 
@@ -1120,7 +1120,7 @@ main header .content #headline {
   }
 }
 
-@media only screen and (max-height: 550px) {
+@media only screen and (max-height: 540px) {
   main header .content #headline {
     font-size: 20px;
     letter-spacing: 16px;
@@ -1137,6 +1137,7 @@ main header .content #headline {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin: 0 auto;
   }
 }
 
@@ -1184,7 +1185,7 @@ main header .content #headline span {
 
 @media screen and (max-height: 600px) {
   main header .content #headline span {
-    margin: 15px auto;
+    margin: 12px auto;
   }
 }
 
