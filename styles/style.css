@@ -538,7 +538,7 @@ body #landing-page #landing-headline {
   }
 }
 
-@media only screen and (max-height: 320px) {
+@media only screen and (max-height: 500px) {
   body #landing-page #landing-headline {
     font-size: 20px;
     letter-spacing: 16px;
@@ -1120,7 +1120,7 @@ main header .content #headline {
   }
 }
 
-@media only screen and (max-height: 320px) {
+@media only screen and (max-height: 500px) {
   main header .content #headline {
     font-size: 20px;
     letter-spacing: 16px;
