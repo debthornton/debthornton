@@ -393,6 +393,12 @@ body {
   transition: height 0.5s ease;
 }
 
+@media screen and (orientation: landscape) {
+  body {
+    height: 100%;
+  }
+}
+
 @media screen and (max-width: 600px) and (min-height: 800px) {
   body {
     min-width: 430px;
