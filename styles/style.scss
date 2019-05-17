@@ -293,6 +293,7 @@ nav {
     will-change: transform, margin-right;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
+            margin-right: 0;
 
     @include MQ(S) {
         -webkit-transition: margin-right 0.3s ease, -webkit-transform 0.4s ease-out;
