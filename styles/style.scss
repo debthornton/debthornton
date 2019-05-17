@@ -379,7 +379,6 @@ main {
     @include fullscreen-flex;
     min-height: 0;
     z-index: 1;
-    height: 100vh;
 
     header,
     section,
@@ -392,7 +391,6 @@ main {
         will-change: opacity;
         @include flex-center(space-evenly, column);
         min-height: 0;
-        height: 100vh;
 
         @include MQ(L) {
             @include flex-center(flex-start, row);

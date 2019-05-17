@@ -412,7 +412,6 @@ body #landing-page {
           justify-content: center;
   width: 100%;
   height: 100%;
-  height: calc(var(--vh, 1.2vh) * 100);
   position: absolute;
   top: 0;
   left: 0;
@@ -917,7 +916,6 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  height: calc(var(--vh, 1.2vh) * 100);
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -931,10 +929,8 @@ main {
           justify-content: center;
   width: 100%;
   height: 100%;
-  height: calc(var(--vh, 1.2vh) * 100);
   min-height: 0;
   z-index: 1;
-  height: 100vh;
 }
 
 main header,
@@ -953,7 +949,6 @@ main .content {
           justify-content: center;
   width: 100%;
   height: 100%;
-  height: calc(var(--vh, 1.2vh) * 100);
 }
 
 main .content {
@@ -973,7 +968,6 @@ main .content {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   min-height: 0;
-  height: 100vh;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -1311,7 +1305,6 @@ main #works-section #works-buttons-container {
           justify-content: center;
   width: 100%;
   height: 100%;
-  height: calc(var(--vh, 1.2vh) * 100);
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
