@@ -382,7 +382,6 @@ body {
           justify-content: space-between;
   color: #f7f7f7;
   height: 100%;
-  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   min-width: 360px;
   min-height: 360px;
