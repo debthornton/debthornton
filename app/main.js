@@ -151,8 +151,10 @@ function changeContent(index) {
 // browswer viewport accomodations
 
 function heightChange() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    if(((window.innerHeight < 700) && (window.innerWidth < 400)) || ((window.innerHeight < 400) && (window.innerWidth < 700))) {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }  
   }
 
 window.addEventListener('load', () => {
