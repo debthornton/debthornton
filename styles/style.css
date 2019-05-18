@@ -393,13 +393,7 @@ body {
   transition: height 0.5s ease;
 }
 
-@media screen and (orientation: portrait) {
-  body {
-    height: calc(var(--vh, 1vh) * 100);
-  }
-}
-
-@media screen and (orientation: landscape) {
+@media screen and (min-height: 300px) and (max-height: 700px) {
   body {
     height: calc(var(--vh, 1vh) * 100);
   }
