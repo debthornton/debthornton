@@ -150,12 +150,17 @@ function changeContent(index) {
 
 // browswer viewport accomodations
 
-window.addEventListener('load', () => {
+function heightChange() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+window.addEventListener('load', () => {
+    heightChange();
   });
 
-window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {  
+    setTimeout( () => {
+        heightChange();
+    }, 300)
   });

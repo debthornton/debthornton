@@ -11,9 +11,9 @@
     @include rotate;
     transition: all 0.3s;
 
-    @include MQ(L) {
+    @include MQ(M) {
       top: 60px;
-      right: 7vw;
+      left: 7vw;
       border: 2px solid $accent-color;
       width: 44px;
       height: 24px;
