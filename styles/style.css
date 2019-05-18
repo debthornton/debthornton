@@ -348,7 +348,7 @@ blockquote, q {
   transition: all 0.3s;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .switch:after {
     border: 2px solid rgba(212, 181, 223, 0.747);
   }
@@ -404,7 +404,7 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) and (min-height: 800px) {
+@media screen and (max-width: 600px) and (min-height: 1000px) {
   body {
     min-width: 430px;
   }
@@ -897,6 +897,13 @@ nav ul .nav-item button {
   font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+@media screen and (orientation: landscape) {
+  nav ul .nav-item button {
+    letter-spacing: 3px;
+  }
 }
 
 nav ul .nav-item button:hover {
@@ -1463,7 +1470,7 @@ main #works-section #works-buttons-container button .works-logo {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-height: 800px) {
+@media screen and (max-width: 1024px) and (min-height: 1000px) {
   main #works-section #works-buttons-container button .works-logo {
     font-size: 30px;
   }
@@ -1491,7 +1498,7 @@ main #works-section #works-buttons-container #fansi-button .works-logo {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-height: 800px) {
+@media screen and (max-width: 1024px) and (min-height: 1000px) {
   main #works-section #works-buttons-container #fansi-button .works-logo {
     font-size: 25px;
   }
@@ -1509,7 +1516,7 @@ main #works-section #works-buttons-container #syzygy-button .works-logo {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-height: 800px) {
+@media screen and (max-width: 1024px) and (min-height: 1000px) {
   main #works-section #works-buttons-container #syzygy-button .works-logo {
     font-size: 40px;
   }
@@ -1548,7 +1555,7 @@ main #works-section #works-buttons-container #roman-button .works-logo {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-height: 800px) {
+@media screen and (max-width: 1024px) and (min-height: 1000px) {
   main #works-section #works-buttons-container #roman-button .works-logo {
     font-size: 40px;
   }
@@ -1574,7 +1581,7 @@ main #works-section #works-buttons-container #portfolio-button .Logo-icon {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-height: 800px) {
+@media screen and (max-width: 1024px) and (min-height: 1000px) {
   main #works-section #works-buttons-container #portfolio-button .Logo-icon {
     font-size: 80px;
   }
@@ -1651,7 +1658,7 @@ main #works-section #works-display-container button:active {
   }
 }
 
-@media screen and (max-width: 768px) and (min-height: 800px) {
+@media screen and (max-width: 768px) and (min-height: 1000px) {
   main #works-section #works-display-container button {
     font-size: 35px;
   }
@@ -1754,7 +1761,7 @@ main #works-section #works-display-container .work-display .display-title {
   }
 }
 
-@media screen and (max-width: 768px) and (min-height: 800px) {
+@media screen and (max-width: 768px) and (min-height: 1000px) {
   main #works-section #works-display-container .work-display .display-title {
     font-size: 40px;
   }
@@ -1877,19 +1884,19 @@ main #works-section #works-display-container .work-display .display-text {
   }
 }
 
-@media screen and (max-width: 768px) and (min-height: 800px) {
+@media screen and (max-width: 768px) and (min-height: 1000px) {
   main #works-section #works-display-container .work-display .display-text {
     width: 500px;
   }
 }
 
-@media screen and (max-width: 600px) and (min-height: 800px) {
+@media screen and (max-width: 600px) and (min-height: 1000px) {
   main #works-section #works-display-container .work-display .display-text {
     width: 400px;
   }
 }
 
-@media screen and (max-width: 498px) and (min-height: 800px) {
+@media screen and (max-width: 498px) and (min-height: 1000px) {
   main #works-section #works-display-container .work-display .display-text {
     width: 340px;
   }
@@ -2305,19 +2312,19 @@ main #bio-section #bio-container .bio-content .bio-text {
   }
 }
 
-@media screen and (max-width: 768px) and (min-height: 800px) {
+@media screen and (max-width: 768px) and (min-height: 1000px) {
   main #bio-section #bio-container .bio-content .bio-text {
     width: 500px;
   }
 }
 
-@media screen and (max-width: 600px) and (min-height: 800px) {
+@media screen and (max-width: 600px) and (min-height: 1000px) {
   main #bio-section #bio-container .bio-content .bio-text {
     width: 400px;
   }
 }
 
-@media screen and (max-width: 498px) and (min-height: 800px) {
+@media screen and (max-width: 498px) and (min-height: 1000px) {
   main #bio-section #bio-container .bio-content .bio-text {
     width: 340px;
   }
@@ -2517,7 +2524,7 @@ footer #social-button button .fa:hover {
   }
 }
 
-@media screen and (max-width: 768px) and (min-height: 800px) {
+@media screen and (max-width: 768px) and (min-height: 1000px) {
   footer #social-button button .fa {
     font-size: 24px;
   }

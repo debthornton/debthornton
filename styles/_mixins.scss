@@ -104,17 +104,17 @@
         width: 550px;
     }
 
-    @media screen and (max-width: $M) and (min-height: 800px)
+    @media screen and (max-width: $M) and (min-height: 1000px)
     {
         width: 500px;
     }
 
-    @media screen and (max-width: 600px) and (min-height: 800px)
+    @media screen and (max-width: 600px) and (min-height: 1000px)
     {
         width: 400px;
     }
 
-    @media screen and (max-width: 498px) and (min-height: 800px)
+    @media screen and (max-width: 498px) and (min-height: 1000px)
     {
         width: 340px;
     }

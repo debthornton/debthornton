@@ -35,7 +35,7 @@
       left: 0px;
       transition: all 0.3s;
 
-      @include MQ(L) {
+      @include MQ(M) {
         border: 2px solid $accent-color;
       }
     }
