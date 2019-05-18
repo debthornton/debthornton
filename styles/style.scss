@@ -341,6 +341,7 @@ nav {
             button {
                 font-size: 14px;
                 font-weight: 300;
+                text-transform: uppercase;
 
                 &:hover {
                     -webkit-transition: color 0.6s ease;
@@ -348,6 +349,10 @@ nav {
                     color: $active-color;
                 }
             }
+        }
+
+        .active-nav {
+                color: $active-color;
         }
 
         .nav-item:nth-of-type(1),

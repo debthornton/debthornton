@@ -19,6 +19,10 @@
       height: 24px;
     }
 
+    @media screen and (orientation: landscape) {
+      top: 5vh;
+    }
+
     &:after {
       content: '';
       position: absolute;

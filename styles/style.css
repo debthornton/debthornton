@@ -328,6 +328,12 @@ blockquote, q {
   }
 }
 
+@media screen and (orientation: landscape) {
+  .switch {
+    top: 5vh;
+  }
+}
+
 .switch:after {
   content: '';
   position: absolute;
@@ -890,11 +896,16 @@ nav ul .nav-item {
 nav ul .nav-item button {
   font-size: 14px;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 nav ul .nav-item button:hover {
   -webkit-transition: color 0.6s ease;
   transition: color 0.6s ease;
+  color: rgba(114, 77, 105, 0.589);
+}
+
+nav ul .active-nav {
   color: rgba(114, 77, 105, 0.589);
 }
 
