@@ -1,3 +1,30 @@
+// add mousemove tracking to contents
+
+window.addEventListener('load', function() {
+    content.forEach(function(contents) {
+        if(contents.classList.contains('work-display') || contents.classList.contains('bio-content')) {
+            contents.addEventListener('mousemove', function(e) {
+                if(window.innerWidth > 780) {
+                    contents.style.transition = 'transform 0.1s linear !important';
+                    contents.style.transform = 'perspective(calc(110vw + ' + (e.offsetX / 60) + 'px)) rotateY(calc(17deg + ' + ((Math.pow(e.offsetX, 0.5)) / 3) + 'deg)) rotateX(calc(-4deg + ' + ((Math.pow(e.offsetY, 0.5)) / 3) + 'deg)) translate(0) translateZ(0)';
+                } else {
+                    contents.style.transform = '';
+                }  
+            });
+
+            window.addEventListener('resize', function() {
+                if(window.innerWidth <= 780) {
+                    contents.style.transform = '';
+                } else {
+                    contents.style.transition = 'transform 0.1s linear !important';
+                    contents.style.transform = 'perspective(calc(110vw + ' + (e.offsetX / 60) + 'px)) rotateY(calc(17deg + ' + ((Math.pow(e.offsetX, 0.5)) / 3) + 'deg)) rotateX(calc(-4deg + ' + ((Math.pow(e.offsetY, 0.5)) / 3) + 'deg)) translate(0) translateZ(0)';
+                }
+            });
+
+        }    
+    })
+})
+
 // fade between contents
 
 function addFade(index) {
@@ -43,7 +70,10 @@ function removeFade(index) {
         video[index].classList.remove('video-swipe');
         video[index].removeAttribute('autoplay');
     }
-    removeTextAnimation(); 
+    removeTextAnimation();
+    // setTimeout(function() {
+    //     removeContentMovement();
+    // }, 500); 
 }
 
 // show 'back to works section' button
@@ -59,35 +89,3 @@ function makeButtonInvisible() {
     backButton.classList.remove('button-z-index');
     backButton.classList.add('back');
 }
-
-function contentMovement() {
-    setTimeout(function() {
-        content.forEach(function(contents) {
-            if(window.innerWidth > 780) {
-                if(contents.classList.contains('front') && (contents.classList.contains('work-display') || contents.classList.contains('bio-content'))) {
-                    contents.addEventListener('mousemove', function(e) {
-                        if(window.innerWidth > 780) {
-                            contents.style.transition = 'transform 0.1s linear !important';
-                            contents.style.transform = 'perspective(calc(110vw + ' + (e.offsetX / 60) + 'px)) rotateY(calc(17deg + ' + ((Math.pow(e.offsetX, 0.5)) / 3) + 'deg)) rotateX(calc(-4deg + ' + ((Math.pow(e.offsetY, 0.5)) / 3) + 'deg)) translate(0) translateZ(0)';
-                        } else {
-                            contents.style.transform = '';
-                        }                       
-                    });
-                    
-                    window.addEventListener('resize', function() {
-                        if(window.innerWidth <= 780) {
-                            contents.style.transform = '';
-                        } else {
-                            contents.style.transition = 'transform 0.1s linear !important';
-                            contents.style.transform = 'perspective(calc(110vw + ' + (e.offsetX / 60) + 'px)) rotateY(calc(17deg + ' + ((Math.pow(e.offsetX, 0.5)) / 3) + 'deg)) rotateX(calc(-4deg + ' + ((Math.pow(e.offsetY, 0.5)) / 3) + 'deg)) translate(0) translateZ(0)';
-                        }
-                    });
-                }
-            } 
-            else {
-                contents.style.transform = '';
-            }   
-        });
-    }, 1500)  
-}
-

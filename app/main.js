@@ -144,8 +144,6 @@ function changeContent(index) {
         }
         
     });
-
-    contentMovement();
 }
 
 // browswer viewport accomodations
