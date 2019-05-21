@@ -953,6 +953,7 @@ body #background-2:before {
 }
 
 body #background-3 {
+  z-index: -9;
   background-image: url("https://res.cloudinary.com/debdev/image/upload/v1558413739/DebDevelops/profile2bw-min.jpg");
   -webkit-filter: grayscale(100%) contrast(110%);
           filter: grayscale(100%) contrast(110%);
