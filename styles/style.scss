@@ -930,7 +930,7 @@ main {
                 margin: auto;
                 scrollbar-width: none;
                 -ms-overflow-style: none;
-                &:-webkit-scrollbar { 
+                &::-webkit-scrollbar { 
                     background: transparent;
                     display: none;
                     width: 0; 

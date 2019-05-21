@@ -1876,7 +1876,7 @@ main #works-section #works-display-container .work-display {
   -ms-overflow-style: none;
 }
 
-main #works-section #works-display-container .work-display:-webkit-scrollbar {
+main #works-section #works-display-container .work-display::-webkit-scrollbar {
   background: transparent;
   display: none;
   width: 0;
