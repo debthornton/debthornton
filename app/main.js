@@ -13,7 +13,6 @@ let footer = document.querySelector('footer');
 let backButton = document.querySelector('#back-button');
 let worksButton = [...document.querySelectorAll('.works-button')];
 let buttons = [...document.querySelectorAll('button')];
-
 // get button from each nav-item
 
 let navItem = []; 
@@ -45,10 +44,10 @@ let page3Style = window.getComputedStyle(page3);
 
 function changeContent(index) {
 
-    buttons.forEach(function(button) {
-        button.style.pointerEvents = 'none';
+    navItem.forEach(function(item) {
+        item.style.pointerEvents = 'none';
         setTimeout(function() {
-            button.style.pointerEvents = 'auto';
+            item.style.pointerEvents = 'auto';
         }, 2000);
     });
 
