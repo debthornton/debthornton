@@ -4,6 +4,7 @@ let nav = document.querySelector('nav');
 let header = document.querySelector('header');
 let page = document.querySelector('#background');
 let page2 = document.querySelector('#background-2');
+let page3 = document.querySelector('#background-3');
 let content = [...document.querySelectorAll('.content')];
 let footer = document.querySelector('footer');
 
@@ -38,6 +39,7 @@ let timerRight = 100;
 
 let pageStyle = window.getComputedStyle(page);
 let page2Style = window.getComputedStyle(page2);
+let page3Style = window.getComputedStyle(page3);
 
 // main control of content
 

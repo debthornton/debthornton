@@ -1,10 +1,20 @@
-/* Color scheme */
+// background colors
 $background-color: rgb(12, 11, 11);
+$background-gradient-color: linear-gradient(135deg, #a8caba 0%, rgba(135, 110, 149, 1) 35%,#5d4157);
+$landing-gradient-color: linear-gradient(135deg, #070707 0%, rgb(32, 32, 32) 35%,#5d4157);
+
+
 $main-text-color: rgb(247, 247, 247);
 $overlay-color: rgb(81, 114, 223);
+
+// main colors
 $accent-color: rgba(212, 181, 223, 0.747);
-$line-gradient-color: linear-gradient(135deg, #a8caba 0%, rgba(135, 110, 149, 1) 35%,#5d4157);
-$landing-gradient-color: linear-gradient(135deg, #070707 0%, rgb(32, 32, 32) 35%,#5d4157);
 $active-color: rgba(114, 77, 105, 0.589);
 $headline-color: lighten($active-color, 30%);
 $toggle-color: rgba(114, 77, 105, 0.507);
+
+// alt colors
+$alt-accent-color: rgb(222, 245, 19);
+$alt-active-color: rgba(164, 180, 23, 0.699);
+$alt-headline-color: lighten($alt-active-color, 10%);
+$alt-toggle-color: rgba(213, 233, 29, 0.555);

@@ -1,25 +1,34 @@
 // toggle button functions
 
 let toggle = document.querySelector('#toggle');
+let body = document.querySelector('body');
 
 // adds background filters on load
 
 window.addEventListener('load', () => {
-    page.style.filter = 'contrast(117%) grayscale(100%)';
-    page2.style.filter = 'contrast(125%) grayscale(100%)';
+    page2.style.filter = 'grayscale(100%)';
+    body.classList.add('alt');
     toggle.checked = false;
 });
 
 function toggleColorMode() {
-    page.style.transition = 'transition: filter 1.4s ease';
-    page2.style.transition = 'transition: filter 1.4s ease';
-    if(page.style.filter == 'contrast(117%) grayscale(100%)') {
-        page.style.filter = 'contrast(105%) grayscale(0)';
-        page2.style.filter = 'contrast(105%) grayscale(0)';
+    page.style.transition = 'transition: filter 1s ease';
+    page2.style.transition = 'transition: filter 1s ease';
+    page3.style.transition = 'transition: filter 1s ease';
+
+    if(page2.style.filter == 'grayscale(100%)') {
+        page3.style.opacity = 0;
+        page2.style.filter = 'grayscale(0)';
+        setTimeout(function() {
+            body.classList.remove('alt');
+        }, 300);
     }else {
-        page.style.filter = 'contrast(117%) grayscale(100%)';
-        page2.style.filter = 'contrast(117%) grayscale(100%)';
-    }   
+        page3.style.opacity = 1;
+        page2.style.filter = 'grayscale(100%)';
+        setTimeout(function() {
+            body.classList.add('alt');
+        }, 300);      
+    }
 }
 
 toggle.addEventListener('click', () => {
@@ -34,29 +43,14 @@ toggle.addEventListener('click', () => {
 // cursor background-position tracking
 
 header.addEventListener("mousemove", e => {
-    // let percentx = pageStyle.getPropertyValue('--percentX');
-    // let percenty = pageStyle.getPropertyValue('--percentY');
-
-    // let percentx2 = page2Style.getPropertyValue('--percentX');
-    // let percenty2 = page2Style.getPropertyValue('--percentY');
-
-    // let x = pageStyle.getPropertyValue('--x');
-    // let y = pageStyle.getPropertyValue('--y');
-
-    // let x2 = page2Style.getPropertyValue('--x');
-    // let y2 = page2Style.getPropertyValue('--y');
-  
-    // page.style.setProperty('--x', (-e.offsetX / 100) + "px");
-    // page.style.setProperty('--y', (-e.offsetY / 50) + "px");
-
-    // page2.style.setProperty('--x', (-e.offsetX / 100) + "px");
-    // page2.style.setProperty('--y', (-e.offsetY / 50) + "px");
     if(window.innerWidth >= 780) {
         page.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px) rotateY(' + (-e.offsetX / 50000) + 'deg)';
         page2.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px) rotateY(' + (-e.offsetX / 50000) + 'deg)';
+        page3.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px) rotateY(' + (-e.offsetX / 50000) + 'deg)';
     } else {
         page.style.transform = '';
         page2.style.transform = '';
+        page3.style.transform = '';
     }  
 });
 
@@ -64,8 +58,15 @@ header.addEventListener("mousemove", e => {
 
 function addBlur() {
     page.style.opacity = 0;
+    page3.style.opacity = 0;
 }
 
-function removeBlur() {
-    page.style.opacity = '1';
+function removeBlur() {   
+    if(page2.style.filter == 'grayscale(100%)') {
+        page3.style.opacity = '1';
+        page.style.opacity = '1';
+    } else {
+        page.style.opacity = '1';
+        page3.style.opacity = '0';
+    }
 }

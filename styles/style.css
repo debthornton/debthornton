@@ -58,7 +58,6 @@ blockquote, q {
   quotes: "" "";
 }
 
-/* Color scheme */
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -67,6 +66,7 @@ blockquote, q {
     opacity: 1;
   }
 }
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -372,6 +372,135 @@ input[type='checkbox']:checked + .switch {
   left: -9999px;
 }
 
+.alt .nav-item button {
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
+  color: #def513;
+}
+
+.alt .nav-item button:hover {
+  color: rgba(164, 180, 23, 0.699) !important;
+}
+
+.alt .active-nav {
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
+  color: rgba(164, 180, 23, 0.699) !important;
+}
+
+.alt .inactive-nav {
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
+  color: #def513 !important;
+}
+
+.alt #social-button button {
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
+  color: #def513;
+}
+
+.alt #social-button button .fa:hover {
+  color: rgba(164, 180, 23, 0.699) !important;
+}
+
+.alt h1 span {
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
+  color: #def513 !important;
+}
+
+.alt #headline .x {
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
+  color: #def513 !important;
+}
+
+.alt .button-container button {
+  -webkit-transition: color 1.2s ease !important;
+  transition: color 1.2s ease !important;
+  color: #def513 !important;
+}
+
+.alt .switch {
+  -webkit-transition: border 1.2s ease;
+  transition: border 1.2s ease;
+  border: 1px solid #def513;
+}
+
+@media only screen and (min-width: 768px) {
+  .alt .switch {
+    border: 2px solid #def513;
+  }
+}
+
+.alt .switch:after {
+  -webkit-transition: border 1.2s ease;
+  transition: border 1.2s ease;
+  border: 1px solid #def513;
+}
+
+@media only screen and (min-width: 768px) {
+  .alt .switch:after {
+    border: 2px solid #def513;
+  }
+}
+
+.alt input[type='checkbox']:checked + .switch {
+  background-color: rgba(213, 233, 29, 0.555);
+}
+
+@media only screen and (min-width: 780px) {
+  .alt #works-buttons-container #fansi-button:hover,
+  .alt #works-buttons-container #syzygy-button:hover,
+  .alt #works-buttons-container #film-button:hover,
+  .alt #works-buttons-container #roman-button:hover,
+  .alt #works-buttons-container #drum-button:hover,
+  .alt #works-buttons-container #portfolio-button:hover {
+    color: #def513;
+  }
+  .alt #works-buttons-container #fansi-button:active,
+  .alt #works-buttons-container #syzygy-button:active,
+  .alt #works-buttons-container #film-button:active,
+  .alt #works-buttons-container #roman-button:active,
+  .alt #works-buttons-container #drum-button:active,
+  .alt #works-buttons-container #portfolio-button:active {
+    color: #def513;
+  }
+  .alt #works-buttons-container #fansi-button:focus,
+  .alt #works-buttons-container #syzygy-button:focus,
+  .alt #works-buttons-container #film-button:focus,
+  .alt #works-buttons-container #roman-button:focus,
+  .alt #works-buttons-container #drum-button:focus,
+  .alt #works-buttons-container #portfolio-button:focus {
+    color: #def513;
+  }
+}
+
+.alt #works-display-container #back-button {
+  color: #def513;
+}
+
+.alt #works-display-container #back-button:hover {
+  color: rgba(164, 180, 23, 0.699);
+}
+
+.alt #works-display-container #back-button:active {
+  color: rgba(164, 180, 23, 0.699);
+}
+
+.alt #works-display-container a {
+  color: #def513 !important;
+}
+
+.alt #works-display-container a:hover {
+  color: rgba(164, 180, 23, 0.699) !important;
+}
+
+.alt .bio-text span {
+  color: #def513 !important;
+}
+
 html {
   background: #0c0b0b;
 }
@@ -433,9 +562,9 @@ body #landing-page {
   animation: fade-out 3s forwards ease 3s;
   background: linear-gradient(135deg, #070707 0%, #202020 35%, #5d4157);
   line-height: 25px;
-  font-weight: 100;
+  height: 100%;
   font-size: 11px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
   display: flex;
@@ -490,6 +619,7 @@ body #landing-page {
 body #landing-page .box-1 {
   font-size: 11px;
   font-weight: 300;
+  font-style: italic;
   margin: 0 auto;
   width: 100%;
   max-width: 640px;
@@ -512,7 +642,8 @@ body #landing-page .box-1 {
 
 @media only screen and (min-width: 1024px) {
   body #landing-page .box-1 {
-    font-size: 14px;
+    font-size: 20px;
+    letter-spacing: 0;
   }
 }
 
@@ -667,6 +798,7 @@ body #landing-page .box-2 {
   width: 100%;
   max-width: 640px;
   font-weight: 300;
+  font-style: italic;
 }
 
 @media only screen and (min-width: 768px) {
@@ -726,8 +858,8 @@ body #landing-page .box-2 .button-container .tool-img:hover {
 
 @media only screen and (min-width: 1024px) {
   body #landing-page .box-2 .button-container .tool-img {
-    font-size: 22px;
-    margin: 0 10px;
+    font-size: 35px;
+    margin: 0 30px;
     -webkit-transition: font-size 1s ease, margin 0.8s ease;
     transition: font-size 1s ease, margin 0.8s ease;
   }
@@ -739,14 +871,13 @@ body #landing-page .box-2 {
 }
 
 body #background,
-body #background-2 {
+body #background-2,
+body #background-3 {
   position: absolute;
   top: 0;
   left: 0;
   width: 102vw;
   height: 102vh;
-  -webkit-filter: contrast(105%) grayscale(100%);
-  filter: contrast(105%) grayscale(100%);
   background-color: #0b0506;
   background-size: cover;
   background-repeat: no-repeat;
@@ -765,20 +896,24 @@ body #background-2 {
 }
 
 body #background:before,
-body #background-2:before {
+body #background-2:before,
+body #background-3:before {
   content: '';
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background: linear-gradient(135deg, #a8caba 0%, #876e95 35%, #5d4157);
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
   position: absolute;
   opacity: 0.15;
 }
 
 @media only screen and (min-width: 1024px) {
   body #background,
-  body #background-2 {
+  body #background-2,
+  body #background-3 {
     --percentX: 45%;
     --percentY: 20%;
     background-position-x: calc(var(--percentX) + var(--x));
@@ -788,7 +923,8 @@ body #background-2:before {
 
 @media only screen and (max-height: 538px) {
   body #background,
-  body #background-2 {
+  body #background-2,
+  body #background-3 {
     --percentX: 45%;
     --percentY: 20%;
   }
@@ -798,6 +934,12 @@ body #background {
   z-index: -10;
   background-image: url("https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/unblur.jpg");
   will-change: opacity;
+  -webkit-filter: contrast(115%);
+          filter: contrast(115%);
+}
+
+body #background:before {
+  opacity: 0;
 }
 
 body #background-2 {
@@ -808,6 +950,26 @@ body #background-2 {
 
 body #background-2:before {
   opacity: 0.4;
+}
+
+body #background-3 {
+  background-image: url("https://res.cloudinary.com/debdev/image/upload/v1558413739/DebDevelops/profile2bw-min.jpg");
+  -webkit-filter: grayscale(100%) contrast(110%);
+          filter: grayscale(100%) contrast(110%);
+}
+
+body #background-3:before {
+  opacity: 0;
+}
+
+body #overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 102vw;
+  height: 102vh;
+  background: linear-gradient(135deg, #a8caba 0%, #876e95 35%, #5d4157);
+  opacity: 0.18;
 }
 
 body button {
@@ -918,6 +1080,8 @@ nav ul .nav-item button {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 4px;
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
 }
 
 @media screen and (orientation: landscape) {
@@ -1063,7 +1227,7 @@ main .content {
 main header {
   line-height: 25px;
   font-size: 11px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
   will-change: font-size, line-height;
@@ -1114,6 +1278,7 @@ main header .content {
 main header .content h1 {
   font-size: 11px;
   font-weight: 300;
+  font-style: italic;
   margin: 0 auto;
   width: 100%;
   max-width: 640px;
@@ -1136,12 +1301,15 @@ main header .content h1 {
 
 @media only screen and (min-width: 1024px) {
   main header .content h1 {
-    font-size: 14px;
+    font-size: 20px;
+    letter-spacing: 0;
   }
 }
 
 main header .content h1 span {
   color: rgba(212, 181, 223, 0.747);
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
 }
 
 main header .content #headline {
@@ -1264,6 +1432,8 @@ main header .content #headline .x {
   color: rgba(188, 156, 180, 0.589);
   font-size: 25px;
   font-weight: 300;
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -1291,6 +1461,7 @@ main header .content .toolset {
   width: 100%;
   max-width: 640px;
   font-weight: 300;
+  font-style: italic;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1329,7 +1500,7 @@ main header .content .toolset .button-container {
   margin-top: 20px;
 }
 
-main header .content .toolset .button-container .tool-img {
+main header .content .toolset .button-container button {
   width: 35px;
   font-size: 20px;
   margin: 0 8px;
@@ -1338,21 +1509,22 @@ main header .content .toolset .button-container .tool-img {
   pointer-events: none;
 }
 
-main header .content .toolset .button-container .tool-img:hover {
+main header .content .toolset .button-container button:hover {
   cursor: auto;
 }
 
 @media only screen and (min-width: 320px) {
-  main header .content .toolset .button-container .tool-img {
+  main header .content .toolset .button-container button {
     -webkit-transition: font-size 1s ease, margin 0.8s ease;
-    transition: font-size 1s ease, margin 0.8s ease;
+    -webkit-transition: font-size 1s ease, margin 0.8s ease, color 1.2s ease;
+    transition: font-size 1s ease, margin 0.8s ease, color 1.2s ease;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  main header .content .toolset .button-container .tool-img {
-    font-size: 22px;
-    margin: 0 10px;
+  main header .content .toolset .button-container button {
+    font-size: 35px;
+    margin: 0 30px;
     -webkit-transition: font-size 1s ease, margin 0.8s ease;
     transition: font-size 1s ease, margin 0.8s ease;
   }
@@ -1931,7 +2103,7 @@ main #works-section #works-display-container .work-display .display-text .text-d
 
 main #works-section #works-display-container .work-display .display-text .text-div p {
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 20px;
   text-align: justify;
   letter-spacing: 1px;
@@ -2359,7 +2531,7 @@ main #bio-section #bio-container .bio-content .bio-text .text-div {
 
 main #bio-section #bio-container .bio-content .bio-text .text-div p {
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 20px;
   text-align: justify;
   letter-spacing: 1px;

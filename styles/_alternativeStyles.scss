@@ -1,0 +1,123 @@
+.alt {
+    .nav-item {
+        button {
+            transition: color 1.2s ease;
+            color: $alt-accent-color;
+            &:hover {
+                color: $alt-active-color !important;
+            }
+        }
+    }
+
+    .active-nav {
+        transition: color 1.2s ease;
+        color: $alt-active-color !important;
+    }
+    
+    .inactive-nav {
+        transition: color 1.2s ease;
+        color: $alt-accent-color !important;
+    }
+
+    #social-button {
+        button {
+            transition: color 1.2s ease;
+            color: $alt-accent-color;
+
+            .fa {
+                &:hover {
+                    color: $alt-active-color !important;
+                }
+            }          
+        }
+    }
+
+    h1 {
+        span {
+            transition: color 1.2s ease;
+            color: $alt-accent-color !important;
+        }
+    }
+
+    #headline {
+        .x {
+            transition: color 1.2s ease;
+            color: $alt-accent-color !important;
+        }
+    }
+
+    .button-container {
+        button {
+            transition: color 1.2s ease !important;
+            color: $alt-accent-color !important;
+        }
+    }
+
+    .switch {
+        transition: border 1.2s ease;
+        border: 1px solid $alt-accent-color;
+
+        @include MQ(M) {
+            border: 2px solid $alt-accent-color;
+        }
+
+        &:after {
+            transition: border 1.2s ease;
+            border: 1px solid $alt-accent-color;
+
+            @include MQ(M) {
+                border: 2px solid $alt-accent-color;
+              }
+        }
+    }
+
+    input[type='checkbox']:checked+.switch {
+        background-color: $alt-toggle-color;
+    }
+
+    #works-buttons-container {
+        @include MQ(780px) {          
+            #fansi-button,
+            #syzygy-button,
+            #film-button,
+            #roman-button,
+            #drum-button,
+            #portfolio-button {
+                &:hover {
+                    color: $alt-accent-color;
+                }
+                &:active {
+                    color: $alt-accent-color;
+                }
+                &:focus {
+                    color: $alt-accent-color;
+                }
+            }
+        }       
+    }
+
+    #works-display-container {
+        #back-button {
+            color: $alt-accent-color;
+            &:hover {
+                color: $alt-active-color;
+            }
+            &:active {
+                color: $alt-active-color;
+            }
+        }
+        
+        a {
+            color: $alt-accent-color !important;
+            &:hover {
+                color: $alt-active-color !important;
+            }
+        }
+    }
+    
+    .bio-text {
+        span {
+            color: $alt-accent-color !important;
+        }
+    }
+}
