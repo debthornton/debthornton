@@ -939,7 +939,7 @@ body #background {
 }
 
 body #background:before {
-  opacity: 0;
+  opacity: 0.2;
 }
 
 body #background-2 {
@@ -953,6 +953,7 @@ body #background-2:before {
 }
 
 body #background-3 {
+  z-index: -10;
   background-image: url("https://res.cloudinary.com/debdev/image/upload/v1558413739/DebDevelops/profile2bw-min.jpg");
   -webkit-filter: grayscale(100%) contrast(110%);
           filter: grayscale(100%) contrast(110%);
@@ -970,6 +971,7 @@ body #overlay {
   height: 102vh;
   background: linear-gradient(135deg, #a8caba 0%, #876e95 35%, #5d4157);
   opacity: 0.18;
+  display: none;
 }
 
 body button {
