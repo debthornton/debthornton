@@ -2693,6 +2693,8 @@ footer #social-button button {
   border: none;
   width: 54px;
   margin: 15px;
+  -webkit-transition: color 1.2s ease;
+  transition: color 1.2s ease;
 }
 
 footer #social-button button:hover {
