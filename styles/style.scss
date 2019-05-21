@@ -929,8 +929,11 @@ main {
                         align-items: initial;
                 margin: auto;
                 scrollbar-width: none;
+                -ms-overflow-style: none;
                 &:-webkit-scrollbar { 
-                    background: transparent; 
+                    background: transparent;
+                    display: none;
+                    width: 0; 
                 } 
 
                 @include MQ(S) {
