@@ -558,8 +558,8 @@ body #landing-page {
   left: 0;
   padding: 10px 40px;
   z-index: 99;
-  -webkit-animation: fade-out 3s forwards ease 3.5s;
-  animation: fade-out 3s forwards ease 3.5s;
+  -webkit-animation: fade-out 3.3s forwards ease 3.5s;
+  animation: fade-out 3.3s forwards ease 3.5s;
   background: linear-gradient(135deg, #070707 0%, #202020 35%, #5d4157);
   line-height: 25px;
   height: 100%;

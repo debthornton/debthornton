@@ -44,9 +44,16 @@ toggle.addEventListener('click', () => {
 
 header.addEventListener("mousemove", e => {
     if(window.innerWidth >= 780) {
-        page.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px)';
-        page2.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px)';
-        page3.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px)';
+        if (isSafari) {
+            page.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px)';
+            page2.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px)';
+            page3.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px)';
+        } else {
+            page.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px) rotateY(' + (-e.offsetX / 50000) + 'deg)';
+	        page2.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px) rotateY(' + (-e.offsetX / 50000) + 'deg)';
+	        page3.style.transform = 'translate(' + (-e.offsetX / 147) + 'px, ' + (-e.offsetY / 145) + 'px) rotateY(' + (-e.offsetX / 50000) + 'deg)';
+        }
+        
     } else {
         page.style.transform = '';
         page2.style.transform = '';
