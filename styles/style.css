@@ -932,7 +932,7 @@ body #background-3:before {
 
 body #background {
   z-index: -10;
-  background-image: url("https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/unblur.jpg");
+  background-image: url("https://res.cloudinary.com/debdev/image/upload/v1558921365/DebDevelops/unblurred.webp");
   will-change: opacity;
   -webkit-filter: contrast(115%);
           filter: contrast(115%);
@@ -944,7 +944,7 @@ body #background:before {
 
 body #background-2 {
   z-index: -20;
-  background-image: url("https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/blur.png");
+  background-image: url("https://res.cloudinary.com/debdev/image/upload/v1558921365/DebDevelops/blurred.webp");
   opacity: 0.5;
 }
 
@@ -954,7 +954,7 @@ body #background-2:before {
 
 body #background-3 {
   z-index: -10;
-  background-image: url("https://res.cloudinary.com/debdev/image/upload/v1558413739/DebDevelops/profile2bw-min.jpg");
+  background-image: url("https://res.cloudinary.com/debdev/image/upload/v1558921365/DebDevelops/grayed.webp");
   -webkit-filter: grayscale(100%) contrast(110%);
           filter: grayscale(100%) contrast(110%);
 }
