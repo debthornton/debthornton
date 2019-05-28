@@ -10,6 +10,70 @@ html {
     background: $background-color;
 }
 
+.webp {
+    #background {
+        z-index: -10;
+        background-image: url('https://res.cloudinary.com/debdev/image/upload/v1558921365/DebDevelops/unblurred.webp');
+        will-change: opacity;
+        filter: contrast(115%);
+
+        &:before {
+            opacity: 0.2;        
+        }
+    }
+    
+    #background-2 {
+        z-index: -20;
+        background-image: url('https://res.cloudinary.com/debdev/image/upload/v1558921365/DebDevelops/blurred.webp');
+        opacity: 0.5;
+    
+        &:before {
+            opacity: 0.4;
+        }
+    }
+
+    #background-3 {
+        z-index: -10;
+        background-image: url('https://res.cloudinary.com/debdev/image/upload/v1558921365/DebDevelops/grayed.webp');
+        filter: grayscale(100%) contrast(110%);
+        &:before {
+            opacity: 0;
+        }
+    }
+}
+
+.no-webp {
+    #background {
+        z-index: -10;
+        background-image: url('https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/unblur.jpg');
+        will-change: opacity;
+        filter: contrast(115%);
+
+        &:before {
+            opacity: 0.2;        
+        }
+    }
+    
+    #background-2 {
+        z-index: -20;
+        background-image: url('https://res.cloudinary.com/debdev/image/upload/v1557640623/DebDevelops/blur.png');
+        opacity: 0.5;
+    
+        &:before {
+            opacity: 0.4;
+        }
+    }
+
+    #background-3 {
+        z-index: -10;
+        background-image: url('https://res.cloudinary.com/debdev/image/upload/v1558413739/DebDevelops/profile2bw-min.jpg');
+        filter: grayscale(100%) contrast(110%);
+        &:before {
+            opacity: 0;
+        }
+    }
+}
+
 body {
     @include flex-center($j-content: space-between);
     color: $main-text-color;
