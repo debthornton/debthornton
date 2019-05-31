@@ -9,7 +9,6 @@
     @media screen and (min-height: 300px) and (max-height: 700px) {
         height: calc(var(--vh, 1vh) * 100);
     }
-    // height: calc(var(--vh, 1vh) * 100);
 }
 
 @mixin flex-center($j-content: space-evenly, $direction: null)
@@ -32,7 +31,6 @@
     @media screen and (min-height: 300px) and (max-height: 700px) {
         height: calc(var(--vh, 1vh) * 100);
     }
-    // height: calc(var(--vh, 1vh) * 100);
 }
 
 //rotation

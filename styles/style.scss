@@ -10,6 +10,8 @@ html {
     background: $background-color;
 }
 
+// background-image webp format images
+
 .webp {
     #background {
         z-index: -10;
@@ -41,6 +43,8 @@ html {
         }
     }
 }
+
+// background-image non-webp format images
 
 .no-webp {
     #background {
@@ -93,6 +97,8 @@ body {
     @media screen and (max-width: 600px) and (min-height: 1000px) {
         min-width: 430px;
     }
+
+    // landing page animation and styles
 
     #landing-page {
         @include fullscreen-flex;
@@ -300,6 +306,8 @@ body {
         }
     }
 
+    //background image cursor tracking and filtering
+
     #background,
     #background-2,
     #background-3 {
@@ -387,6 +395,8 @@ body {
         display: none;
     }
 
+    // default button stying
+
     button {
         background: transparent;
         border: none;
@@ -415,6 +425,8 @@ nav {
                 transform: rotate(0deg);
         margin-right: 0;
     }
+
+    // nav oritentation change for larger displays
 
     @include MQ(L) {
         margin-right: 5vw;
@@ -518,6 +530,8 @@ main {
                 flex-wrap: wrap;
         }
     }
+
+    // header page styling
 
     header {
         line-height: 25px;
@@ -725,6 +739,8 @@ main {
             }
         }
     }
+
+    // works section styling
 
     #works-section {
         @include flex-center(center, column);
@@ -978,6 +994,8 @@ main {
                 }
             }
 
+            // styling and spacing for each individual works display content page
+
             .work-display {
                 padding: 10vh 20px;
                 will-change: padding;
@@ -1022,6 +1040,8 @@ main {
                         -ms-flex-align: initial;
                             align-items: initial;
                 }
+
+                // content cursor tracking for rotation animation
 
                 @include MQ(780px) {
                     -webkit-transition: -webkit-transform 0.1s linear !important;
@@ -1231,6 +1251,8 @@ main {
         }
     }
 
+    // biography section styling
+
     #bio-section {
         @include flex-center(center, column);
 
@@ -1283,6 +1305,8 @@ main {
                         -ms-flex-align: initial;
                             align-items: initial;
                 }
+
+                // content cursor tracking for rotation animation
 
                 @include MQ(780px) {
                     -webkit-transition: -webkit-transform 0.1s linear !important;
@@ -1369,6 +1393,8 @@ footer {
         -webkit-transform-origin: 50%  51%;
         transform-origin: 50%  51%;
     }
+
+    // footer rotation styles for larger displays
 
     @include MQ(L) {
         @include rotate(-90deg);

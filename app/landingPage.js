@@ -3,6 +3,8 @@ let landingHeadline = document.querySelector('#landing-headline');
 let landingHeadlineLetters =[...landingHeadline.querySelectorAll('span')];
 let landingHeadlineTimer = 0.3;
 
+// cascading letter opacity animation
+
 function letterAnimation() {
     landingHeadlineLetters.forEach(function(letter) {
         letter.style.animation = 'fade-in 2.2s forwards ease ' + landingHeadlineTimer + 's'

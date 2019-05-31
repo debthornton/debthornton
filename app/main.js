@@ -44,6 +44,8 @@ let page3Style = window.getComputedStyle(page3);
 
 function changeContent(index) {
 
+    // temporarily set pointer events to 'none' after each content change
+
     navItem.forEach(function(item) {
         item.style.pointerEvents = 'none';
         setTimeout(function() {
@@ -52,8 +54,8 @@ function changeContent(index) {
     });
 
     switch(index) {
-        case 1:
-        case 2:
+        case 1: // blur between content, translate nav-items, and highlight second nav-item only
+        case 2: 
         case 3:
         case 4:
         case 5:
@@ -65,7 +67,7 @@ function changeContent(index) {
             navInactive(0);
             navInactive(2);
             break;
-        case 8:
+        case 8: // blur between content, translate nav-items, and highlight third nav-item only
             addBlur();
             navSwipe();
             navActive(2);
@@ -75,7 +77,7 @@ function changeContent(index) {
                 addTextAnimation(index);
             }, 1300);
             break;
-        default:
+        default: // blur between content, untranslate nav-items, and highlight first nav-item only
             reverseNavSwipe();
             removeBlur();
             if ((navItem[1].classList.contains('active-nav')) || (navItem[2].classList.contains('active-nav'))) {
@@ -84,6 +86,8 @@ function changeContent(index) {
                 navInactive(2);
             } 
     }
+
+    // make "back to works" button visible while on works displays
 
     switch(index) {
         case 2:
@@ -100,6 +104,8 @@ function changeContent(index) {
         default:
             makeButtonInvisible();
     }
+
+    // add button swipe-in animation while on works buttons page
 
     if(index === 1) {
         worksButton.forEach(function(button) {
@@ -123,13 +129,19 @@ function changeContent(index) {
                 }, 2500);
             }
         });
+
+        // reset timer after each visit
         timerLeft = 100;
         timerRight = 100;
     }
 
+    // remove header as top z-index element
+
     if (header.classList.contains('z-index')) {
         header.classList.remove('z-index');
     }
+
+    // add and remove the fading animation between contents
     
     content.forEach(function(contents) {        
         if (index === content.indexOf(contents)) {
@@ -147,7 +159,7 @@ function changeContent(index) {
     });
 }
 
-// browswer viewport accomodations
+// browswer height viewport accomodations
 
 function heightChange() {
     let vh = window.innerHeight * 0.01;
