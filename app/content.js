@@ -6,7 +6,7 @@ window.addEventListener('load', function() {
             contents.addEventListener('mousemove', function(e) {
                 if(window.innerWidth > 780) {
                     contents.style.transition = 'transform 0.1s linear !important';
-                    contents.style.transform = 'perspective(calc(110vw + ' + (e.offsetX / 60) + 'px)) rotateY(calc(17deg + ' + ((Math.pow(e.offsetX, 0.5)) / 3) + 'deg)) rotateX(calc(-4deg + ' + ((Math.pow(e.offsetY, 0.5)) / 3) + 'deg)) translate(0) translateZ(0)';
+                    contents.style.transform = 'perspective(calc(110vw + ' + (e.offsetX / 60) + 'px)) rotateY(calc(17deg + ' + ((Math.pow(e.offsetX, 0.5)) / 8) + 'deg)) rotateX(calc(-4deg + ' + ((Math.pow(e.offsetY, 0.5)) / 6) + 'deg)) translate(0) translateZ(0)';
                 } else {
                     contents.style.transform = '';
                 }  
@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
                     contents.style.transform = '';
                 } else {
                     contents.style.transition = 'transform 0.1s linear !important';
-                    contents.style.transform = 'perspective(calc(110vw + ' + (e.offsetX / 60) + 'px)) rotateY(calc(17deg + ' + ((Math.pow(e.offsetX, 0.5)) / 3) + 'deg)) rotateX(calc(-4deg + ' + ((Math.pow(e.offsetY, 0.5)) / 3) + 'deg)) translate(0) translateZ(0)';
+                    contents.style.transform = 'perspective(calc(110vw + ' + (e.offsetX / 60) + 'px)) rotateY(calc(17deg + ' + ((Math.pow(e.offsetX, 0.5)) / 8) + 'deg)) rotateX(calc(-4deg + ' + ((Math.pow(e.offsetY, 0.5)) / 6) + 'deg)) translate(0) translateZ(0)';
                 }
             });
 
