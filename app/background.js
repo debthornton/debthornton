@@ -6,9 +6,14 @@ let body = document.querySelector('body');
 // adds background filters on load
 
 window.addEventListener('load', () => {
-    page2.style.filter = 'grayscale(100%)';
-    body.classList.add('alt');
-    toggle.checked = false;
+    if(localStorage.getItem('mode') === 'color') {
+        page3.style.opacity = 0;
+        page2.style.filter = 'grayscale(0)';
+    } else {
+        page2.style.filter = 'grayscale(100%)';
+        body.classList.add('alt');
+        toggle.checked = false;
+    }
 });
 
 function toggleColorMode() {
@@ -19,15 +24,28 @@ function toggleColorMode() {
     if(page2.style.filter == 'grayscale(100%)') {
         page3.style.opacity = 0;
         page2.style.filter = 'grayscale(0)';
+        localStorage.setItem('mode', 'color');
         setTimeout(function() {
             body.classList.remove('alt');
         }, 300);
     }else {
-        page3.style.opacity = 1;
-        page2.style.filter = 'grayscale(100%)';
-        setTimeout(function() {
-            body.classList.add('alt');
-        }, 300);      
+        if(content[0].classList.contains('front')) {
+            page3.style.opacity = 1;
+            page2.style.filter = 'grayscale(100%)';
+            localStorage.setItem('mode', 'no-color');
+            setTimeout(function() {
+                body.classList.add('alt');
+            }, 300);
+        } else {
+            page3.style.opacity = 1;
+            page2.style.filter = 'grayscale(100%)';
+            localStorage.setItem('mode', 'no-color');
+            setTimeout(function() {
+                body.classList.add('alt');
+            }, 300);
+            addBlur();
+        }
+     
     }
 }
 

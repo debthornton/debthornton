@@ -15,7 +15,10 @@ let worksButton = [...document.querySelectorAll('.works-button')];
 let buttons = [...document.querySelectorAll('button')];
 // get button from each nav-item
 
-let navItem = []; 
+let navItem = [];
+
+let emailButton = document.getElementById('email-button');
+let emailForm = document.getElementById('email-form');
 
 Array.prototype.forEach.call(document.querySelectorAll('.nav-item'), el => {
     navItem.push(el.querySelector('button'));
@@ -66,6 +69,8 @@ function changeContent(index) {
             navActive(1);
             navInactive(0);
             navInactive(2);
+            emailInactive();
+            unfadeForm();
             break;
         case 8: // blur between content, translate nav-items, and highlight third nav-item only
             addBlur();
@@ -73,17 +78,34 @@ function changeContent(index) {
             navActive(2);
             navInactive(0);
             navInactive(1);
+            emailInactive();
+            unfadeForm();
             setTimeout(function() {
                 addTextAnimation(index);
             }, 1300);
             break;
+        case 9: // blur between content, translate nav-items, and highlight email icon only
+            addBlur();
+            navSwipe();
+            emailActive();
+            navInactive(0);
+            navInactive(1);
+            navInactive(2);
+            if(!emailForm.classList.contains('front')) {
+                setTimeout(function() {
+                    addFormAnimation(index);
+                }, 1300);
+            }
+            break;
         default: // blur between content, untranslate nav-items, and highlight first nav-item only
             reverseNavSwipe();
             removeBlur();
-            if ((navItem[1].classList.contains('active-nav')) || (navItem[2].classList.contains('active-nav'))) {
+            if ((navItem[1].classList.contains('active-nav')) || (navItem[2].classList.contains('active-nav')) || (emailButton.classList.contains('active-nav'))) {
                 navActive(0);
                 navInactive(1);
                 navInactive(2);
+                emailInactive();
+                unfadeForm();
             } 
     }
 

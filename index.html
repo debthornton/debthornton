@@ -13,10 +13,11 @@
         <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#513259">
         <meta name="msapplication-TileColor" content="#000000">
         <meta name="theme-color" content="#000000">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="styles/style.min.css">
     </head>
     <body>
+        <input type="checkbox" id="toggle" class="offscreen" /> <label for="toggle" class="switch"></label>
         <!-- [if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif] -->
@@ -62,8 +63,8 @@
         <main>
             <header class='z-index'>
                 <div class="content z-index front">
-                    <input type="checkbox" id="toggle" class="offscreen" /> <label for="toggle" class="switch"></label>
-                    <h1>I'm Deb Thornton, a <span>web developer</span> out of Philadelphia.</h1>
+                    <!-- <input type="checkbox" id="toggle" class="offscreen" /> <label for="toggle" class="switch"></label> -->
+                    <h1>I'm Deb Thornton, a <span>web developer</span> in Philadelphia.</h1>
                     <div id="headline">
                             <span>D</span>
                             <span>E</span>
@@ -78,12 +79,15 @@
                             I develop websites, web apps, & fun distractions with:
                         </p>
                         <div class="button-container">
-                            <button alt="HTML5" class="tool-img icon html-min-icon"></button>
-                            <button alt="CSS3" class="tool-img icon css-min-icon"></button>
-                            <button alt="JavaScript" class="tool-img icon js-512-min-icon"></button>
+                            <i class="tool-img fab fa-html5"></i>
+                            <i class="tool-img fab fa-css3-alt"></i>
+                            <i class="tool-img fab fa-js"></i>
                             <button alt="jQuery" class="tool-img icon jQuery-min-icon"></button>
-                            <button alt="Sass" class="tool-img icon Sass-min-icon"></button>
-                            <button alt="Bootstrap" class="tool-img icon bootstrap-min-icon"></button>
+                            <i class="tool-img fab fa-sass"></i>
+                            <i class="tool-img fab fa-bootstrap"></i>
+                            <i class="tool-img fab fa-angular"></i>
+                            <i class="tool-img fab fa-react"></i>
+                            <i class="tool-img fab fa-aws"></i>
                         </div>                       
                     </div>
                 </div>
@@ -284,7 +288,7 @@
                                     Creating this portfolio was an exercise in both web design and
                                     responsive web development. A simple, minimal UI with pops of colorful
                                     gradients in which I will continue to post projects. If you'd like to reach
-                                    me for more info, <a href='mailto:debthornton.mail@icloud.com' title='Shoot me an email'>contact</a> me. I respond quickly.
+                                    me for more info, <a href='#' onclick='changeContent(9)'>contact</a> me. I respond quickly.
                                 </p>
                             </div>                         
                             <p class='stack'>
@@ -339,28 +343,65 @@
                     </div>
                 </div>             
             </section>
+            <section id="email-section">
+                <!-- <div id="email-container"> -->
+                    <div id='email-form' class="content back email-content" >
+                        <h3 id='contact-title' class="display-title">Contact Me</h3>
+                        <div class="email-text">
+                            <form name='input' method='POST' action="http://formspree.io/debthornton.mail@icloud.com" onsubmit="return submitForm()">
+                            <!-- <form name='input'> -->
+                                <div class='form-div'>
+                                    <label for='name'>Name</label>
+                                    <div class='border-div'>
+                                        <input type='text' name='name' id='name-input' required>
+                                    </div>       
+                                </div>
+                                <div class='form-div'>
+                                    <label for='_replyto'>Email</label>
+                                    <div class='border-div'>
+                                        <input type='email' name='_replyto' id='email-input' required>
+                                    </div>
+                                </div>
+                                <div class='form-div'>
+                                    <label for='message'>What's up?</label>
+                                    <div class='border-div'>
+                                        <textarea name="message" rows="10" id='body-input' required></textarea>
+                                    </div>  
+                                </div>
+                                <div class='form-div'>
+                                    <input id='email-submit-button' type="submit" value="Send">
+                                </div>
+                            </form>
+                        </div>
+                        <div id='note'>
+                            <i class="far fa-smile"></i>
+                            <div>Thanks for reaching out! I'll try to get back to you shortly.</div>
+                        </div>                     
+                    </div>
+                <!-- </div> -->
+            </section>
         </main>
 
         <footer>
             <div id="social-button">
                 <a href="https://github.com/debxdev" target="_blank">
                     <button>
-                        <i class="fa fa-github"></i>
+                        <i class="fab fa-github"></i>
                     </button>
                 </a>
                 <a href="https://www.linkedin.com/in/deb-thornton-870a5817a/" target="_blank">
                     <button>
-                        <i class="fa fa-linkedin"></i>
+                        <i class="fab fa-linkedin"></i>
                     </button>
                 </a>
                 <a href="https://codepen.io/debthornton/" target="_blank">
                     <button>
-                        <i class="fa fa-codepen"></i>
+                        <i class="fab fa-codepen"></i>
                     </button>
                 </a>
-                <a href="mailto:debxthornton@icloud.com">
+                <a href="#" onclick='changeContent(9)'>
                     <button>
-                        <i class="fa fa-envelope-o"></i>
+                        <i  id='email-button' class="fas fa-envelope inactive-nav"></i>
                     </button>
                 </a>
             </div>
@@ -371,7 +412,7 @@
         <script src="app/nav.min.js"></script>
         <script src="app/content.min.js"></script>
         <script src="app/landingPage.min.js"></script>
-        <script src="app/modernizr-custom.js"></script>
+        <script src="app/modernizr-custom.min.js"></script>
         <script src='app/browserDetection.min.js'></script>
     </body>
 </html>
