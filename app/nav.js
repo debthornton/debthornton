@@ -66,6 +66,16 @@ function navInactive(index) {
     navItem[index].classList.add('inactive-nav');
 }
 
+function emailActive() {
+    emailButton.classList.remove('inactive-nav');
+    emailButton.classList.add('active-nav');
+}
+
+function emailInactive() {
+    emailButton.classList.remove('active-nav');
+    emailButton.classList.add('inactive-nav');
+}
+
 //active nav/footer styles tracking
 
 window.addEventListener('resize', function() {

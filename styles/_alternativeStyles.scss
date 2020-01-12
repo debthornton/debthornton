@@ -2,7 +2,7 @@
 
 .alt {
     .nav-item {
-        button {
+        button, .fab, .fas {
             transition: color 1.2s ease;
             color: $alt-accent-color;
             &:hover {
@@ -26,7 +26,7 @@
             transition: color 1.2s ease;
             color: $alt-accent-color;
 
-            .fa {
+            .fab,.fas {
                 &:hover {
                     color: $alt-active-color !important;
                 }
@@ -49,7 +49,7 @@
     }
 
     .button-container {
-        button {
+        button, .fab, .fas {
             transition: color 1.2s ease !important;
             color: $alt-accent-color !important;
         }
@@ -74,6 +74,9 @@
     }
 
     input[type='checkbox']:checked+.switch {
+        background-color: $alt-toggle-color;
+    }
+    input[type='checkbox']:not(:checked)+.switch {
         background-color: $alt-toggle-color;
     }
 
@@ -121,5 +124,15 @@
         span {
             color: $alt-accent-color !important;
         }
+    }
+
+    .border-div {
+        border-left: 2px solid $alt-accent-color !important;
+    }
+
+    #email-submit-button {
+        &:hover {
+            color: $alt-accent-color !important;
+        }  
     }
 }

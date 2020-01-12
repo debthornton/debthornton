@@ -314,8 +314,9 @@ blockquote, q {
   border: 1px solid rgba(212, 181, 223, 0.747);
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 98;
 }
 
 @media only screen and (min-width: 768px) {
@@ -344,8 +345,10 @@ blockquote, q {
   border: 1px solid rgba(212, 181, 223, 0.747);
   top: -1px;
   left: 0px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 @media only screen and (min-width: 768px) {
@@ -358,12 +361,29 @@ blockquote, q {
   cursor: pointer;
 }
 
+input[type='checkbox']:not(:checked) + .switch::after {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
 input[type='checkbox']:checked + .switch::after {
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 input[type='checkbox']:checked + .switch {
+  background-color: rgba(114, 77, 105, 0.507);
+}
+
+input[type='checkbox']:not(:checked) + .switch {
   background-color: rgba(114, 77, 105, 0.507);
 }
 
@@ -372,13 +392,13 @@ input[type='checkbox']:checked + .switch {
   left: -9999px;
 }
 
-.alt .nav-item button {
+.alt .nav-item button, .alt .nav-item .fab, .alt .nav-item .fas {
   -webkit-transition: color 1.2s ease;
   transition: color 1.2s ease;
   color: #def513;
 }
 
-.alt .nav-item button:hover {
+.alt .nav-item button:hover, .alt .nav-item .fab:hover, .alt .nav-item .fas:hover {
   color: rgba(164, 180, 23, 0.699) !important;
 }
 
@@ -400,7 +420,7 @@ input[type='checkbox']:checked + .switch {
   color: #def513;
 }
 
-.alt #social-button button .fa:hover {
+.alt #social-button button .fab:hover, .alt #social-button button .fas:hover {
   color: rgba(164, 180, 23, 0.699) !important;
 }
 
@@ -416,7 +436,7 @@ input[type='checkbox']:checked + .switch {
   color: #def513 !important;
 }
 
-.alt .button-container button {
+.alt .button-container button, .alt .button-container .fab, .alt .button-container .fas {
   -webkit-transition: color 1.2s ease !important;
   transition: color 1.2s ease !important;
   color: #def513 !important;
@@ -447,6 +467,10 @@ input[type='checkbox']:checked + .switch {
 }
 
 .alt input[type='checkbox']:checked + .switch {
+  background-color: rgba(213, 233, 29, 0.555);
+}
+
+.alt input[type='checkbox']:not(:checked) + .switch {
   background-color: rgba(213, 233, 29, 0.555);
 }
 
@@ -498,6 +522,14 @@ input[type='checkbox']:checked + .switch {
 }
 
 .alt .bio-text span {
+  color: #def513 !important;
+}
+
+.alt .border-div {
+  border-left: 2px solid #def513 !important;
+}
+
+.alt #email-submit-button:hover {
   color: #def513 !important;
 }
 
@@ -906,9 +938,10 @@ body #landing-page .box-2 .button-container {
 body #landing-page .box-2 .button-container .tool-img {
   width: 35px;
   font-size: 20px;
-  margin: 0 8px;
+  margin: 0 4px;
   color: rgba(212, 181, 223, 0.747);
   opacity: 0.8;
+  pointer-events: none;
 }
 
 body #landing-page .box-2 .button-container .tool-img:hover {
@@ -924,6 +957,33 @@ body #landing-page .box-2 .button-container .tool-img:hover {
 
 @media only screen and (min-width: 1024px) {
   body #landing-page .box-2 .button-container .tool-img {
+    font-size: 35px;
+    margin: 0 30px;
+    -webkit-transition: font-size 1s ease, margin 0.8s ease;
+    transition: font-size 1s ease, margin 0.8s ease;
+  }
+}
+
+body #landing-page .box-2 .button-container .fab {
+  color: rgba(212, 181, 223, 0.747);
+  font-size: 26px;
+  margin: 0 8px;
+  opacity: 0.8;
+}
+
+body #landing-page .box-2 .button-container .fab:hover {
+  cursor: auto;
+}
+
+@media only screen and (min-width: 320px) {
+  body #landing-page .box-2 .button-container .fab {
+    -webkit-transition: font-size 1s ease, margin 0.8s ease;
+    transition: font-size 1s ease, margin 0.8s ease;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body #landing-page .box-2 .button-container .fab {
     font-size: 35px;
     margin: 0 30px;
     -webkit-transition: font-size 1s ease, margin 0.8s ease;
@@ -1598,6 +1658,33 @@ main header .content .toolset .button-container button:hover {
   }
 }
 
+main header .content .toolset .button-container .fab {
+  color: rgba(212, 181, 223, 0.747);
+  font-size: 26px;
+  margin: 0 8px;
+  opacity: 0.8;
+}
+
+main header .content .toolset .button-container .fab:hover {
+  cursor: auto;
+}
+
+@media only screen and (min-width: 320px) {
+  main header .content .toolset .button-container .fab {
+    -webkit-transition: font-size 1s ease, margin 0.8s ease;
+    transition: font-size 1s ease, margin 0.8s ease;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main header .content .toolset .button-container .fab {
+    font-size: 35px;
+    margin: 0 30px;
+    -webkit-transition: font-size 1s ease, margin 0.8s ease;
+    transition: font-size 1s ease, margin 0.8s ease;
+  }
+}
+
 main #works-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1872,8 +1959,8 @@ main #works-section #works-display-container button {
   margin: 15px 0 0 10px;
   font-size: 25px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 34px;
+  left: 20px;
   -ms-flex-item-align: start;
   align-self: flex-start;
   -webkit-transform: rotate(180deg);
@@ -1937,7 +2024,7 @@ main #works-section #works-display-container .work-display {
   -webkit-box-align: initial;
   -ms-flex-align: initial;
   align-items: initial;
-  margin: auto;
+  left: 5%;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -1995,7 +2082,7 @@ main #works-section #works-display-container .work-display::-webkit-scrollbar {
 @media only screen and (min-width: 1024px) {
   main #works-section #works-display-container .work-display {
     padding: 0 140px;
-    height: 80%;
+    height: 50%;
   }
 }
 
@@ -2006,6 +2093,7 @@ main #works-section #works-display-container .work-display .display-title {
   margin: 15px auto 20px auto;
   text-align: center;
   text-transform: uppercase;
+  width: 80%;
 }
 
 @media only screen and (min-width: 320px) {
@@ -2017,7 +2105,7 @@ main #works-section #works-display-container .work-display .display-title {
 
 @media only screen and (min-width: 1024px) {
   main #works-section #works-display-container .work-display .display-title {
-    width: 100%;
+    width: 80%;
     font-size: 52px;
     margin: 0 0 0 5vw;
     text-align: left;
@@ -2686,6 +2774,412 @@ main #bio-section #bio-container .bio-content .bio-text span {
   color: rgba(212, 181, 223, 0.747);
 }
 
+main #email-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #email-section .email-content {
+  padding: 0 20px;
+  -webkit-perspective: 100px;
+  perspective: 100px;
+  overflow-y: scroll;
+  -webkit-box-pack: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+  min-height: 0;
+  margin: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+main #email-section .email-content::-webkit-scrollbar {
+  background: transparent;
+  display: none;
+  width: 0;
+}
+
+@media only screen and (max-height: 538px) {
+  main #email-section .email-content {
+    top: 2vh;
+  }
+}
+
+@media only screen and (min-height: 667px) {
+  main #email-section .email-content {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-height: 538px) {
+  main #email-section .email-content {
+    -webkit-box-pack: initial;
+    -ms-flex-pack: initial;
+    justify-content: initial;
+    -webkit-box-align: initial;
+    -ms-flex-align: initial;
+    align-items: initial;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  main #email-section .email-content {
+    -webkit-transition: -webkit-transform 0.1s linear !important;
+    transition: transform 0.1s linear, -webkit-transform 0.1s linear !important;
+    -webkit-transform: perspective(110vw) rotateY(17deg) translate(0) translateZ(0);
+    transform: perspective(110vw) rotateY(17deg) translate(0) translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main #email-section .email-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+
+main #email-section .email-content .display-title {
+  letter-spacing: 8px;
+  font-weight: 300;
+  font-size: 24px;
+  margin: 20px auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 320px) {
+  main #email-section .email-content .display-title {
+    -webkit-transition: font-size 0.5s ease;
+    transition: font-size 0.5s ease;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main #email-section .email-content .display-title {
+    width: 100%;
+    font-size: 52px;
+  }
+}
+
+main #email-section .email-content .email-text {
+  width: 280px;
+  min-width: 280px;
+  margin: 0 auto;
+  pointer-events: none;
+  will-change: width;
+  pointer-events: auto;
+  margin: 0 auto;
+  will-change: width;
+}
+
+@media only screen and (min-width: 320px) {
+  main #email-section .email-content .email-text {
+    -webkit-transition: width .4s ease;
+    transition: width .4s ease;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  main #email-section .email-content .email-text {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main #email-section .email-content .email-text {
+    width: 540px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main #email-section .email-content .email-text {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  main #email-section .email-content .email-text {
+    width: 340px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  main #email-section .email-content .email-text {
+    width: 380px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  main #email-section .email-content .email-text {
+    width: 480px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  main #email-section .email-content .email-text {
+    width: 550px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-height: 1000px) {
+  main #email-section .email-content .email-text {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-height: 1000px) {
+  main #email-section .email-content .email-text {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 498px) and (min-height: 1000px) {
+  main #email-section .email-content .email-text {
+    width: 340px;
+  }
+}
+
+main #email-section .email-content .email-text .text-div {
+  width: 100%;
+  margin: 0 auto 40px auto;
+  padding-left: 8px;
+  border-left: 1px solid #f7f7f7;
+}
+
+main #email-section .email-content .email-text .text-div p {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 20px;
+  text-align: justify;
+  letter-spacing: 1px;
+  color: white;
+  will-change: font-size, line-height;
+}
+
+@media only screen and (min-width: 1024px) {
+  main #email-section .email-content .email-text .text-div p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  main #email-section .email-content .email-text .text-div p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-height: 800px) {
+  main #email-section .email-content .email-text .text-div p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-height: 800px) {
+  main #email-section .email-content .email-text .text-div p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+main #email-section .email-content .email-text .text-div p a {
+  font-weight: 500;
+  pointer-events: auto;
+  color: rgba(212, 181, 223, 0.747);
+}
+
+main #email-section .email-content .email-text .text-div p a:hover {
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+  color: rgba(114, 77, 105, 0.589);
+}
+
+main #email-section .email-content .email-text .text-div p a:active {
+  color: rgba(114, 77, 105, 0.589);
+}
+
+@media only screen and (min-width: 320px) {
+  main #email-section .email-content .email-text {
+    -webkit-transition: width 1s ease !important;
+    transition: width 1s ease !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main #email-section .email-content .email-text {
+    width: 680px !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  main #email-section .email-content .email-text {
+    width: 740px !important;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  main #email-section .email-content .email-text {
+    width: 940px !important;
+  }
+}
+
+main #email-section .email-content .email-text span {
+  color: rgba(212, 181, 223, 0.747);
+}
+
+main #email-section .email-content .form-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px auto 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+}
+
+main #email-section .email-content .form-div label {
+  margin: 10px 0 10px 23px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+main #email-section .email-content .form-div .border-div {
+  border-left: 2px solid rgba(212, 181, 223, 0.747);
+  width: 100%;
+}
+
+main #email-section .email-content .form-div .border-div input, main #email-section .email-content .form-div .border-div textarea {
+  padding: 15px 10px;
+  margin-left: 20px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+main #email-section .email-content .form-div .border-div textarea {
+  resize: none;
+}
+
+main #email-section .email-content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+main #email-section .email-content #email-submit-button {
+  margin: 20px auto 0 auto;
+  width: 50%;
+  padding: 15px 0;
+  background: transparent;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-transition: letter-spacing 0.2s ease, font-weight 0.2s ease;
+  transition: letter-spacing 0.2s ease, font-weight 0.2s ease;
+  cursor: pointer;
+}
+
+main #email-section .email-content #email-submit-button:hover {
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: rgba(212, 181, 223, 0.747);
+}
+
+main #email-section #note {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 30px;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: -2;
+}
+
+main #email-section #note .far {
+  font-size: 200px;
+  color: whitesmoke;
+  opacity: 0.6;
+  margin: 0 auto 70px auto;
+}
+
+main .email-content.front {
+  pointer-events: auto;
+}
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2775,25 +3269,25 @@ footer #social-button button:hover {
   cursor: pointer;
 }
 
-footer #social-button button .fa {
+footer #social-button button .fab, footer #social-button button .fas {
   font-size: 20px;
   margin: 0 10px;
 }
 
-footer #social-button button .fa:hover {
+footer #social-button button .fab:hover, footer #social-button button .fas:hover {
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
   color: rgba(114, 77, 105, 0.589);
 }
 
 @media only screen and (min-width: 1024px) {
-  footer #social-button button .fa {
+  footer #social-button button .fab, footer #social-button button .fas {
     font-size: 24px;
   }
 }
 
 @media screen and (max-width: 768px) and (min-height: 1000px) {
-  footer #social-button button .fa {
+  footer #social-button button .fab, footer #social-button button .fas {
     font-size: 24px;
   }
 }

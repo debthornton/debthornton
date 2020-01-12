@@ -2,7 +2,7 @@
 
 window.addEventListener('load', function() {
     content.forEach(function(contents) {
-        if(contents.classList.contains('work-display') || contents.classList.contains('bio-content')) {
+        if(contents.classList.contains('work-display') || contents.classList.contains('bio-content') || contents.classList.contains('email-content')) {
             contents.addEventListener('mousemove', function(e) {
                 if(window.innerWidth > 780) {
                     contents.style.transition = 'transform 0.1s linear !important';
@@ -52,6 +52,19 @@ function addTextAnimation(index) {
     timerLeft = 100;
 }
 
+function addFormAnimation(index) {
+    let formDiv = [...content[index].querySelectorAll('.form-div')];
+
+    formDiv.forEach(function(input) {       
+        setTimeout(function() {
+            input.style.transform = 'translateY(10px)';
+            input.style.transition = 'transform 0.3s ease';
+        }, timerLeft);
+        timerLeft += 100;
+    })
+    timerLeft = 100;
+}
+
 function removeTextAnimation() {
     let docTextDiv = [...document.querySelectorAll('.text-div')];
 
@@ -61,19 +74,79 @@ function removeTextAnimation() {
     })
 }
 
+function removeFormAnimation() {
+    let docFormDiv = [...document.querySelectorAll('.form-div')];
+
+    docFormDiv.forEach(function(input) {
+        input.style.transform = 'translateY(0px)';
+        input.style.transition = 'transform 0.1s ease';
+    })
+}
+
+function fadeForm() {
+    let docFormDiv = [...document.querySelectorAll('.form-div')];
+    let title = document.getElementById('contact-title');
+    let note = document.getElementById('note');
+
+    title.style.transform = 'translateY(-100px)';
+    title.style.opacity = 0;
+    title.style.transition = 'transform 0.5s ease, opacity 0.3s ease 0.3s';
+
+    docFormDiv.forEach(function(input) {       
+        setTimeout(function() {
+            input.style.transform = 'translateY(-100px)';
+            input.style.opacity = 0;
+            input.style.transition = 'transform 0.5s ease, opacity 0.3s ease 0.3s';
+        }, timerLeft);
+        timerLeft += 100;
+    })
+    timerLeft = 100;
+
+    note.style.opacity = 1;
+    note.style.transition = 'opacity 0.4s ease 0.8s';
+}
+
+function unfadeForm() {
+    let docFormDiv = [...document.querySelectorAll('.form-div')];
+    let title = document.getElementById('contact-title');
+    let note = document.getElementById('note');
+
+    title.style.transform = 'translateY(0px)';
+    title.style.opacity = 1;
+    title.style.transition = 'transform 0.5s ease, opacity 0.3s ease 0.3s';
+
+    note.style.opacity = 0;
+    note.style.transition = 'opacity 0.4s ease 0.8s';
+
+    docFormDiv.forEach(function(input) {       
+        setTimeout(function() {
+            input.style.transform = 'translateY(0px)';
+            input.style.opacity = 1;
+            input.style.transition = 'transform 0.5s ease, opacity 0.3s ease 0.3s';
+        }, timerLeft);
+        timerLeft += 100;
+    })
+    timerLeft = 100;
+}
+
+function submitForm() {
+    fadeForm()
+    return true;
+}
+
 function removeFade(index) {
     if(content[index].classList.contains('front')) {
         content[index].classList.remove('front');
         content[index].classList.add('back');
+        setTimeout(function() {
+            removeTextAnimation();
+            removeFormAnimation();
+        }, 500);
     }
     if ((index > 1) && (index < 7)) {
         video[index].classList.remove('video-swipe');
         video[index].removeAttribute('autoplay');
     }
-    removeTextAnimation();
-    // setTimeout(function() {
-    //     removeContentMovement();
-    // }, 500); 
 }
 
 // show 'back to works section' button

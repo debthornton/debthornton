@@ -11,7 +11,8 @@
     border-radius: 18px;
     border: 1px solid $accent-color;
     @include rotate;
-    transition: all 0.3s;
+    transition: all 0.5s;
+    z-index: 98;
 
     @include MQ(M) {
       top: 60px;
@@ -37,7 +38,8 @@
       border: 1px solid $accent-color;
       top: -1px;
       left: 0px;
-      transition: all 0.3s;
+      transform: translateX(0);
+      transition: all 0.3s ease;
 
       @include MQ(M) {
         border: 2px solid $accent-color;
@@ -48,11 +50,20 @@
     }
 }
 
+input[type='checkbox']:not(:checked)+.switch::after {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
   input[type='checkbox']:checked+.switch::after {
     transform: translateX(20px);
+    transition: transform 0.3s ease;
   }
 
   input[type='checkbox']:checked+.switch {
+    background-color: $toggle-color;
+  }
+  input[type='checkbox']:not(:checked)+.switch {
     background-color: $toggle-color;
   }
 
